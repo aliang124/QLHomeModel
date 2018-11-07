@@ -1,0 +1,84 @@
+{
+  "name": "WTBaseCore",
+  "version": "0.0.1",
+  "summary": "WT核心框架包",
+  "homepage": "https://github.com/aliang124/WTBaseCore",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "YYWebImage": [
+      "~> 1.0.5"
+    ],
+    "FDFullscreenPopGesture": [
+      "~> 1.1"
+    ],
+    "DZNEmptyDataSet": [
+      "~> 1.8.1"
+    ],
+    "AFNetworking": [
+      "~> 3.1.0"
+    ],
+    "IQKeyboardManager": [
+      "~> 5.0.7"
+    ],
+    "Aspects": [
+      "~> 1.4.1"
+    ],
+    "XAspect": [
+      "~> 1.0.5"
+    ],
+    "MJExtension": [
+      "~> 3.0.13"
+    ]
+  },
+  "source": {
+    "git": "https://github.com/aliang124/WTBaseCore.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "WTBaseCore/*.{h,m}",
+  "resources": "WTBaseCore/CoreRes/WTBaseCore.bundle",
+  "subspecs": [
+    {
+      "name": "CoreString",
+      "source_files": "WTBaseCore/CoreString/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "CoreUtil",
+      "source_files": "WTBaseCore/CoreUtil/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "CoreRes",
+      "source_files": "WTBaseCore/CoreRes/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "CoreUI",
+      "source_files": "WTBaseCore/CoreUI/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "CoreCell",
+      "source_files": "WTBaseCore/CoreCell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "CoreController",
+      "source_files": "WTBaseCore/CoreController/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "CoreNetworking",
+      "source_files": "WTBaseCore/CoreNetworking/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "RETableViewManager",
+      "source_files": "WTBaseCore/RETableViewManager/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "WTAppDelegate",
+      "source_files": "WTBaseCore/WTAppDelegate/**/*.{h,m,c,mm}"
+    }
+  ]
+}

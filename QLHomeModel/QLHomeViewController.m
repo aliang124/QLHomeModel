@@ -15,6 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.leftItemList = [NSArray array];
+    [self setControllerTitle];
 }
 
 - (void)setControllerTitle {

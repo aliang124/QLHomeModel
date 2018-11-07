@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
+		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
+		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
+		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
+		50DADCEF2192811B00DA8BFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCEE2192811B00DA8BFE /* main.m */; };
+		50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD002192870800DA8BFE /* QLHomeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		50DADCE82192811B00DA8BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50DADCEB2192811B00DA8BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50DADCED2192811B00DA8BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DADCEE2192811B00DA8BFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50DADCF52192819300DA8BFE /* WTDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTDemo.pch; sourceTree = "<group>"; };
+		50DADCFF2192870800DA8BFE /* QLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeViewController.h; sourceTree = "<group>"; };
+		50DADD002192870800DA8BFE /* QLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeViewController.m; sourceTree = "<group>"; };
+		A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WTDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F9E923A66FEA1755F59C0D /* Pods-WTDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C8162E2829EB8076EBC3E808 /* Pods-WTDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50DADCD92192811A00DA8BFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50DADCD32192811A00DA8BFE = {
+			isa = PBXGroup;
+			children = (
+				50DADCDE2192811A00DA8BFE /* WTDemo */,
+				50DADCDD2192811A00DA8BFE /* Products */,
+				FC9BA0E8AAAA70E67CD09CD3 /* Pods */,
+				B160F7A7F7133FFEFB7FE33C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		50DADCDD2192811A00DA8BFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50DADCDC2192811A00DA8BFE /* WTDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50DADCDE2192811A00DA8BFE /* WTDemo */ = {
+			isa = PBXGroup;
+			children = (
+				50DADCDF2192811A00DA8BFE /* AppDelegate.h */,
+				50DADCE02192811A00DA8BFE /* AppDelegate.m */,
+				50DADCFE2192870800DA8BFE /* QLHomeModel */,
+				50DADCE82192811B00DA8BFE /* Assets.xcassets */,
+				50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */,
+				50DADCED2192811B00DA8BFE /* Info.plist */,
+				50DADCEE2192811B00DA8BFE /* main.m */,
+				50DADCF52192819300DA8BFE /* WTDemo.pch */,
+			);
+			path = WTDemo;
+			sourceTree = "<group>";
+		};
+		50DADCFE2192870800DA8BFE /* QLHomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				50DADCFF2192870800DA8BFE /* QLHomeViewController.h */,
+				50DADD002192870800DA8BFE /* QLHomeViewController.m */,
+			);
+			name = QLHomeModel;
+			path = ../../QLHomeModel;
+			sourceTree = "<group>";
+		};
+		B160F7A7F7133FFEFB7FE33C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC9BA0E8AAAA70E67CD09CD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8162E2829EB8076EBC3E808 /* Pods-WTDemo.debug.xcconfig */,
+				C2F9E923A66FEA1755F59C0D /* Pods-WTDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50DADCDB2192811A00DA8BFE /* WTDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DADCF22192811B00DA8BFE /* Build configuration list for PBXNativeTarget "WTDemo" */;
+			buildPhases = (
+				9CBD7C00C397B4DBE46B5FA1 /* [CP] Check Pods Manifest.lock */,
+				50DADCD82192811A00DA8BFE /* Sources */,
+				50DADCD92192811A00DA8BFE /* Frameworks */,
+				50DADCDA2192811A00DA8BFE /* Resources */,
+				7B67E88DFA2BC378C6018365 /* [CP] Embed Pods Frameworks */,
+				59095B11E86DC33A7D8004F1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTDemo;
+			productName = WTDemo;
+			productReference = 50DADCDC2192811A00DA8BFE /* WTDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50DADCD42192811A00DA8BFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "计恩良";
+				TargetAttributes = {
+					50DADCDB2192811A00DA8BFE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 50DADCD72192811A00DA8BFE /* Build configuration list for PBXProject "WTDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50DADCD32192811A00DA8BFE;
+			productRefGroup = 50DADCDD2192811A00DA8BFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50DADCDB2192811A00DA8BFE /* WTDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50DADCDA2192811A00DA8BFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */,
+				50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59095B11E86DC33A7D8004F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/WTBaseCore/WTBaseCore/CoreRes/WTBaseCore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WTBaseCore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B67E88DFA2BC378C6018365 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CBD7C00C397B4DBE46B5FA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WTDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50DADCD82192811A00DA8BFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
+				50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */,
+				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50DADCEB2192811B00DA8BFE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50DADCF02192811B00DA8BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50DADCF12192811B00DA8BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50DADCF32192811B00DA8BFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8162E2829EB8076EBC3E808 /* Pods-WTDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
+				INFOPLIST_FILE = WTDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50DADCF42192811B00DA8BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2F9E923A66FEA1755F59C0D /* Pods-WTDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
+				INFOPLIST_FILE = WTDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50DADCD72192811A00DA8BFE /* Build configuration list for PBXProject "WTDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DADCF02192811B00DA8BFE /* Debug */,
+				50DADCF12192811B00DA8BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DADCF22192811B00DA8BFE /* Build configuration list for PBXNativeTarget "WTDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DADCF32192811B00DA8BFE /* Debug */,
+				50DADCF42192811B00DA8BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50DADCD42192811A00DA8BFE /* Project object */;
+}
