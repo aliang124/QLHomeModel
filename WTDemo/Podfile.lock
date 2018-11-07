@@ -141,7 +141,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WTBaseCore:
-    :commit: 922befd2a9523b03ab3c613de146d20e2b97598c
+    :commit: 30decedb81765c37b27677e3df4e5134c8cab196
     :git: https://github.com/aliang124/WTBaseCore.git
 
 SPEC CHECKSUMS:
