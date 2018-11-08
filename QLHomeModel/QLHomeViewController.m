@@ -16,9 +16,22 @@
     [super viewDidLoad];
     self.navBar.leftItemList = [NSArray array];
     [self setControllerTitle];
+    [self initForm];
 }
 
 - (void)setControllerTitle {
     self.navBar.title = @"首页";
+}
+
+- (void)initForm {
+    NSMutableArray *sectionArray = [NSMutableArray array];
+    RETableViewSection *section0 = [RETableViewSection section];
+    
+    
+    [sectionArray addObject:section0];
+    [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
+    
+    [self.formTable reloadData];
+    [self.formTable reloadEmptyDataSet];
 }
 @end

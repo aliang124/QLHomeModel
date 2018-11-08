@@ -16,6 +16,8 @@
 @property (nonatomic,assign) BOOL hasTopLine;
 @property (nonatomic,copy) UIColor *bgColor;
 @property (nonatomic,assign) BOOL hasArrow;//是否有向右箭头
+@property (nonatomic,assign) BOOL canHighlighted;//点击是否有高亮状态
+
 @end
 
 @interface WTBaseCell : RETableViewCell

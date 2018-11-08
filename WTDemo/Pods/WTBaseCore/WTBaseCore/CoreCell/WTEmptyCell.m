@@ -18,6 +18,7 @@
 - (id)init{
     if (self = [super init]) {
         self.cellHeight = 10;
+        self.canHighlighted = NO;
         self.bgColor = [UIColor clearColor];
          self.hasBottomLine = NO;
     }
@@ -38,8 +39,6 @@
     [super cellDidLoad];
     self.backgroundColor = [UIColor clearColor];
 }
-
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
 

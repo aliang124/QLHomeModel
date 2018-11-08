@@ -19,6 +19,7 @@
           self.hasBottomLine = YES;
           self.hasArrow = NO;
           self.bgColor = [UIColor whiteColor];
+          self.canHighlighted = YES;
      }
      return self;
 }
@@ -60,11 +61,13 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-     if (highlighted) {
-          self.backgroundColor = WTColorHex(0xcccccc);
-     } else {
-          self.backgroundColor = self.item.bgColor;
-     }
+    if (self.item.canHighlighted) {
+        if (highlighted) {
+            self.backgroundColor = WTColorHex(0xcccccc);
+        } else {
+            self.backgroundColor = self.item.bgColor;
+        }
+    }
 }
 
 @end

@@ -1,0 +1,19 @@
+{
+  "name": "WTCyclePagerView",
+  "version": "0.0.1",
+  "summary": "WTCyclePagerView循环滚动视图，如banner等",
+  "homepage": "https://github.com/aliang124/WTCyclePagerView",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/aliang124/WTCyclePagerView.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "WTCyclePagerView/*.{h,m}"
+}
