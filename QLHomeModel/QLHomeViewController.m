@@ -7,6 +7,7 @@
 //
 
 #import "QLHomeViewController.h"
+#import "QLHomeBannerCell.h"
 @interface QLHomeViewController ()
 @end
 
@@ -14,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.formManager[@"QLHomeBannerItem"] = @"QLHomeBannerCell";
     self.navBar.leftItemList = [NSArray array];
     [self setControllerTitle];
     [self initForm];
@@ -27,6 +29,9 @@
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
     
+    QLHomeBannerItem *it = [[QLHomeBannerItem alloc] init];
+    it.datas = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    [section0 addItem:it];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

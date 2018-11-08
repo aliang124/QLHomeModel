@@ -13,6 +13,8 @@
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
 		50DADCEF2192811B00DA8BFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCEE2192811B00DA8BFE /* main.m */; };
 		50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD002192870800DA8BFE /* QLHomeViewController.m */; };
+		50DADD1F2194382B00DA8BFE /* QLHomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD1E2194382B00DA8BFE /* QLHomeBannerCell.m */; };
+		50DADD22219439F000DA8BFE /* WTCyclePagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD21219439F000DA8BFE /* WTCyclePagerViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		50DADCF52192819300DA8BFE /* WTDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTDemo.pch; sourceTree = "<group>"; };
 		50DADCFF2192870800DA8BFE /* QLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeViewController.h; sourceTree = "<group>"; };
 		50DADD002192870800DA8BFE /* QLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeViewController.m; sourceTree = "<group>"; };
+		50DADD1D2194382B00DA8BFE /* QLHomeBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeBannerCell.h; sourceTree = "<group>"; };
+		50DADD1E2194382B00DA8BFE /* QLHomeBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeBannerCell.m; sourceTree = "<group>"; };
+		50DADD20219439EF00DA8BFE /* WTCyclePagerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCyclePagerViewCell.h; sourceTree = "<group>"; };
+		50DADD21219439F000DA8BFE /* WTCyclePagerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCyclePagerViewCell.m; sourceTree = "<group>"; };
 		A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WTDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F9E923A66FEA1755F59C0D /* Pods-WTDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C8162E2829EB8076EBC3E808 /* Pods-WTDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,11 +85,23 @@
 		50DADCFE2192870800DA8BFE /* QLHomeModel */ = {
 			isa = PBXGroup;
 			children = (
+				50DADD1C219437AD00DA8BFE /* Cell */,
 				50DADCFF2192870800DA8BFE /* QLHomeViewController.h */,
 				50DADD002192870800DA8BFE /* QLHomeViewController.m */,
 			);
 			name = QLHomeModel;
 			path = ../../QLHomeModel;
+			sourceTree = "<group>";
+		};
+		50DADD1C219437AD00DA8BFE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				50DADD20219439EF00DA8BFE /* WTCyclePagerViewCell.h */,
+				50DADD21219439F000DA8BFE /* WTCyclePagerViewCell.m */,
+				50DADD1D2194382B00DA8BFE /* QLHomeBannerCell.h */,
+				50DADD1E2194382B00DA8BFE /* QLHomeBannerCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B160F7A7F7133FFEFB7FE33C /* Frameworks */ = {
@@ -232,7 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
+				50DADD1F2194382B00DA8BFE /* QLHomeBannerCell.m in Sources */,
 				50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */,
+				50DADD22219439F000DA8BFE /* WTCyclePagerViewCell.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
