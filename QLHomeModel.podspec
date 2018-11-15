@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/aliang124/QLHomeModel"
 
   s.license      = "MIT"
-  s.author             = { "jienliang000" => "jienliang000@163.com" }
+  s.author             = { "jienliang000" => "jienliang000@126.com" }
 
   s.platform     = :ios
   s.platform     = :ios, "8.0"

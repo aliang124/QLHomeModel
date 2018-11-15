@@ -2,7 +2,7 @@
   "name": "WTBaseCore",
   "version": "0.0.1",
   "summary": "WT核心框架包",
-  "homepage": "https://github.com/aliang124/WTBaseCore",
+  "homepage": "https://github.com/jienliang000/WTBaseCore",
   "license": "MIT",
   "authors": {
     "jienliang000": "jienliang000@163.com"
@@ -12,33 +12,21 @@
   },
   "requires_arc": true,
   "dependencies": {
-    "YYWebImage": [
-      "~> 1.0.5"
-    ],
     "FDFullscreenPopGesture": [
       "~> 1.1"
     ],
     "DZNEmptyDataSet": [
       "~> 1.8.1"
     ],
-    "AFNetworking": [
-      "~> 3.1.0"
-    ],
     "IQKeyboardManager": [
       "~> 5.0.7"
-    ],
-    "Aspects": [
-      "~> 1.4.1"
-    ],
-    "XAspect": [
-      "~> 1.0.5"
     ],
     "MJExtension": [
       "~> 3.0.13"
     ]
   },
   "source": {
-    "git": "https://github.com/aliang124/WTBaseCore.git",
+    "git": "https://github.com/jienliang000/WTBaseCore.git",
     "tag": "0.0.1"
   },
   "source_files": "WTBaseCore/*.{h,m}",
