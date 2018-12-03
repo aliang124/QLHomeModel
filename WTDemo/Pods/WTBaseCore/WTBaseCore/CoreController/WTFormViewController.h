@@ -10,13 +10,8 @@
 #import "RETableViewManager.h"
 #import "RETableViewSection.h"
 #import "WTDefine.h"
-#import "UIScrollView+EmptyDataSet.h"
-@interface WTFormViewController : WTViewController<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+
+@interface WTFormViewController : WTViewController
 @property (nonatomic, strong) UITableView *formTable;
 @property (nonatomic, strong) RETableViewManager *formManager;
-
-//空数据相关属性
-@property (nonatomic,copy) NSString *emptyDataIcon;
-@property (nonatomic,copy) NSString *emptyDataTitle;
-@property (nonatomic,copy) NSString *emptyDataDesc;
 @end

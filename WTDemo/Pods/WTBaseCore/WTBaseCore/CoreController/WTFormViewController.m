@@ -38,8 +38,6 @@
      _formTable.bounces = YES;
      _formTable.showsHorizontalScrollIndicator = NO;
      _formTable.showsVerticalScrollIndicator = NO;
-     _formTable.emptyDataSetSource = self;
-     _formTable.emptyDataSetDelegate = self;
      _formTable.tableFooterView = [UIView new];
 #ifdef __IPHONE_11_0
     if ([_formTable respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
@@ -59,32 +57,4 @@
      return 0;
 }
 
-- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-     return [UIImage imageNamed:[WTUtil strRelay:self.emptyDataIcon]];
-}
-
-- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *title = [WTUtil strRelay:self.emptyDataTitle];
-     NSDictionary *attributes = @{
-                                  NSFontAttributeName:[UIFont systemFontOfSize:16.0f],
-                                  NSForegroundColorAttributeName:[UIColor darkGrayColor]
-                                  };
-     return [[NSAttributedString alloc] initWithString:title attributes:attributes];
-}
-
-- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *text = [WTUtil strRelay:self.emptyDataDesc];
-     
-     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
-     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
-     paragraph.alignment = NSTextAlignmentCenter;
-     
-     NSDictionary *attributes = @{
-                                  NSFontAttributeName:[UIFont systemFontOfSize:15.0f],
-                                  NSForegroundColorAttributeName:[UIColor lightGrayColor],
-                                  NSParagraphStyleAttributeName:paragraph
-                                  };
-     
-     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
-}
 @end

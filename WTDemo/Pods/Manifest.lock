@@ -1,13 +1,9 @@
 PODS:
-  - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (5.0.8)
-  - MJExtension (3.0.13)
   - WTBaseCore (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
     - WTBaseCore/CoreCell (= 0.0.1)
     - WTBaseCore/CoreController (= 0.0.1)
     - WTBaseCore/CoreNetworking (= 0.0.1)
@@ -18,50 +14,32 @@ PODS:
     - WTBaseCore/RETableViewManager (= 0.0.1)
     - WTBaseCore/WTAppDelegate (= 0.0.1)
   - WTBaseCore/CoreCell (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/CoreController (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/CoreNetworking (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/CoreRes (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/CoreString (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/CoreUI (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/CoreUtil (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/RETableViewManager (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTBaseCore/WTAppDelegate (0.0.1):
-    - DZNEmptyDataSet (~> 1.8.1)
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
-    - MJExtension (~> 3.0.13)
   - WTCyclePagerView (0.0.1)
 
 DEPENDENCIES:
@@ -76,18 +54,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WTBaseCore:
-    :commit: a66ae50648782e8e4c0b5d79ba2c4b69b8d7c8cf
+    :commit: 11f445e141b9fc9a06eb458a330834e49dba9d7a
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTCyclePagerView:
     :commit: 5806905a2b767426934cd0a72b2acb121d860fa3
     :git: https://github.com/jienliang000/WTCyclePagerView.git
 
 SPEC CHECKSUMS:
-  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  WTBaseCore: 8c4d030edeb8a3bca35b93620906ca364c09181d
+  WTBaseCore: ce67f4ff76996a6702557a9fd068a96e9d51c618
   WTCyclePagerView: d08fe21d23d29a01f1e8a597f3a3d5e1583c6262
 
 PODFILE CHECKSUM: 4b65684501380a192861f1aba0ad8b8a3fce2488

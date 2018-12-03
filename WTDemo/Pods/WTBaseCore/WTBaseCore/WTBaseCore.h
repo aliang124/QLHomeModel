@@ -52,7 +52,5 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 //EXT
 #import "UITextView+Placeholder.h"
-#import "MJExtension.h"
-#import "NSBundle+WTBaseCore.h"
 
 #endif

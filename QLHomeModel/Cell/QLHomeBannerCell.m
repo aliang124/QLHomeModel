@@ -81,7 +81,7 @@
 
 - (nonnull WTCyclePagerViewLayout *)layoutForPagerView:(nonnull WTCyclePagerView *)pageView {
     WTCyclePagerViewLayout *layout = [[WTCyclePagerViewLayout alloc]init];
-    layout.itemSize = CGSizeMake(CGRectGetWidth(pageView.frame)*0.8, CGRectGetHeight(pageView.frame)*0.8);
+    layout.itemSize = CGSizeMake(CGRectGetWidth(pageView.frame)*0.95, CGRectGetHeight(pageView.frame)*1);
     layout.itemSpacing = 10;
     layout.itemHorizontalCenter = YES;
     return layout;

@@ -37,6 +37,5 @@
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     
     [self.formTable reloadData];
-    [self.formTable reloadEmptyDataSet];
 }
 @end

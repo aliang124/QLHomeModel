@@ -15,14 +15,8 @@
     "FDFullscreenPopGesture": [
       "~> 1.1"
     ],
-    "DZNEmptyDataSet": [
-      "~> 1.8.1"
-    ],
     "IQKeyboardManager": [
       "~> 5.0.7"
-    ],
-    "MJExtension": [
-      "~> 3.0.13"
     ]
   },
   "source": {
