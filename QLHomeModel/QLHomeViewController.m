@@ -8,6 +8,9 @@
 
 #import "QLHomeViewController.h"
 #import "QLHomeBannerCell.h"
+#import <QLBusiness.h>
+#import <CTMediator.h>
+
 @interface QLHomeViewController ()
 @end
 
@@ -19,6 +22,17 @@
     self.navBar.leftItemList = [NSArray array];
     [self setControllerTitle];
     [self initForm];
+    
+    WTCustomBarItem *itRight = [[WTCustomBarItem alloc] init];
+    itRight.itemStyle = 0;
+    itRight.itemTitle = @"登录";
+    itRight.itemTextColor = QL_NavBar_TitleColor_Black;
+    itRight.itemTextFont = [UIFont systemFontOfSize:16];
+    itRight.onClick = ^{
+        UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
+        [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+    };
+    self.navBar.rightItemList = [NSArray arrayWithObject:itRight];
 }
 
 - (void)setControllerTitle {
