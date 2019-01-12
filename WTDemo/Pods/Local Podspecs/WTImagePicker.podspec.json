@@ -1,0 +1,24 @@
+{
+  "name": "WTImagePicker",
+  "version": "0.0.1",
+  "summary": "WTImagePicker",
+  "homepage": "https://github.com/jienliang000/WTImagePicker",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "TZImagePickerController": [
+      "~> 2.0.0.7"
+    ]
+  },
+  "source": {
+    "git": "https://github.com/jienliang000/WTImagePicker.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "WTImagePicker/*.{h,m}"
+}

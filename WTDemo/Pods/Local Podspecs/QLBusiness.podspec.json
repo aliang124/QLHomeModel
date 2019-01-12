@@ -1,0 +1,54 @@
+{
+  "name": "QLBusiness",
+  "version": "0.0.1",
+  "summary": "QLBusiness趣浪业务数据和自定义View",
+  "homepage": "https://github.com/aliang124/QLBusiness",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "MBProgressHUD": [
+
+    ]
+  },
+  "source": {
+    "git": "https://github.com/aliang124/QLBusiness.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "QLBusiness/*.{h,m}",
+  "subspecs": [
+    {
+      "name": "Cell",
+      "source_files": "QLBusiness/Cell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "View",
+      "source_files": "QLBusiness/View/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Util",
+      "source_files": "QLBusiness/Util/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Model",
+      "source_files": "QLBusiness/Model/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Request",
+      "source_files": "QLBusiness/Request/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Controller",
+      "source_files": "QLBusiness/Controller/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "AddressPicker",
+      "source_files": "QLBusiness/AddressPicker/**/*.{h,m,plist}"
+    }
+  ]
+}

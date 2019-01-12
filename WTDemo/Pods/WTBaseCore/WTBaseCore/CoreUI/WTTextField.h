@@ -11,4 +11,6 @@
 @interface WTTextField : UITextField
 @property (nonatomic,assign) int maxLen;
 @property (nonatomic,assign) BOOL hasCopyAndPast;
+@property (copy, readwrite, nonatomic) void (^textFieldDidChanged)(void);
+
 @end

@@ -1,0 +1,27 @@
+{
+  "name": "WTHttpUtil",
+  "version": "0.0.1",
+  "summary": "WTHttpUtil",
+  "homepage": "https://github.com/jienliang000/WTHttpUtil",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "YYWebImage": [
+      "~> 1.0.5"
+    ],
+    "AFNetworking": [
+      "~> 3.1.0"
+    ]
+  },
+  "source": {
+    "git": "https://github.com/jienliang000/WTHttpUtil.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "WTHttpUtil/*.{h,m}"
+}

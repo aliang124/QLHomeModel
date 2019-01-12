@@ -49,7 +49,7 @@ API_AVAILABLE(ios(8.0))
     preferences.javaScriptCanOpenWindowsAutomatically = YES;
     configuration.preferences = preferences;
     
-    _wkWebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, WT_NavBar_Height, WTScreenWidth, WTScreenHeight-WT_NavBar_Height) configuration:configuration];
+    _wkWebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, WT_Default_NavBar_Height, WTScreenWidth, WTScreenHeight-WT_Default_NavBar_Height) configuration:configuration];
     _wkWebView.backgroundColor = [UIColor whiteColor];
     _wkWebView.UIDelegate = self;
     _wkWebView.navigationDelegate = self;

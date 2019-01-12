@@ -1,0 +1,29 @@
+{
+  "name": "QLCareModel",
+  "version": "0.0.1",
+  "summary": "QLCareModel趣浪首页",
+  "homepage": "https://github.com/aliang124/QLCareModel",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/aliang124/QLCareModel.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "QLCareModel/*.{h,m}",
+  "subspecs": [
+    {
+      "name": "View",
+      "source_files": "QLCareModel/View/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Cell",
+      "source_files": "QLCareModel/Cell/**/*.{h,m,c,mm}"
+    }
+  ]
+}

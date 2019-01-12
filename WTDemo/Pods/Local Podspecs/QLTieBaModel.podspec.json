@@ -1,0 +1,29 @@
+{
+  "name": "QLTieBaModel",
+  "version": "0.0.1",
+  "summary": "QLTieBaModel趣浪浪吧",
+  "homepage": "https://github.com/aliang124/QLTieBaModel",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/aliang124/QLTieBaModel.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "QLTieBaModel/*.{h,m}",
+  "subspecs": [
+    {
+      "name": "Cell",
+      "source_files": "QLTieBaModel/Cell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Detail",
+      "source_files": "QLTieBaModel/Detail/**/*.{h,m,c,mm}"
+    }
+  ]
+}

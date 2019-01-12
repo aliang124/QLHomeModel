@@ -1,0 +1,19 @@
+{
+  "name": "QLADLaunchModel",
+  "version": "0.0.1",
+  "summary": "QLADLaunchModel趣浪启动图",
+  "homepage": "https://github.com/aliang124/QLADLaunchModel",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/aliang124/QLADLaunchModel.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "QLADLaunchModel/*.{h,m}"
+}

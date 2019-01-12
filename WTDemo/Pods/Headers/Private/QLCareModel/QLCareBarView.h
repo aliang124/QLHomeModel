@@ -1,0 +1,1 @@
+../../../QLCareModel/QLCareModel/View/QLCareBarView.h

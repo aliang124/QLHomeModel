@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WTNavBar.h"
+#import "WTCustomNavBar.h"
 
 @interface WTViewController : UIViewController
 /**
  *    @brief    导航栏视图.
  */
-@property (nonatomic, strong) WTNavBar *navBar;
+@property (nonatomic, strong) WTCustomNavBar *navBar;
 @end

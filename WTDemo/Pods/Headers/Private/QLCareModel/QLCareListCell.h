@@ -1,0 +1,1 @@
+../../../QLCareModel/QLCareModel/Cell/QLCareListCell.h

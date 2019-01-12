@@ -15,6 +15,13 @@
      return it;
 }
 
++ (id)initWithHeight:(float)height bgColor:(UIColor *)bColor {
+    WTEmptyItem *it = [[WTEmptyItem alloc] init];
+    it.cellHeight = height;
+    it.bgColor = bColor;
+    return it;
+}
+
 - (id)init{
     if (self = [super init]) {
         self.cellHeight = 10;

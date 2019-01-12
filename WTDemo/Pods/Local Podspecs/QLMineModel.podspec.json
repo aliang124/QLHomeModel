@@ -1,0 +1,61 @@
+{
+  "name": "QLMineModel",
+  "version": "0.0.1",
+  "summary": "QLMineModel趣浪我的",
+  "homepage": "https://github.com/aliang124/QLMineModel",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/aliang124/QLMineModel.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "QLMineModel/*.{h,m}",
+  "subspecs": [
+    {
+      "name": "ABoutMe",
+      "source_files": "QLMineModel/ABoutMe/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "BabyRecord",
+      "source_files": "QLMineModel/BabyRecord/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "FeedBack",
+      "source_files": "QLMineModel/FeedBack/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Setting",
+      "source_files": "QLMineModel/Setting/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "UserInfo",
+      "source_files": "QLMineModel/UserInfo/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "GuanZhu",
+      "source_files": "QLMineModel/GuanZhu/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Funs",
+      "source_files": "QLMineModel/Funs/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Message",
+      "source_files": "QLMineModel/Message/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Cell",
+      "source_files": "QLMineModel/Cell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "NetWorking",
+      "source_files": "QLMineModel/NetWorking/**/*.{h,m,c,mm}"
+    }
+  ]
+}

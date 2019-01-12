@@ -1,0 +1,41 @@
+{
+  "name": "QLMerchantModel",
+  "version": "0.0.1",
+  "summary": "QLMerchantModel商家",
+  "homepage": "https://github.com/aliang124/QLMerchantModel",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/aliang124/QLMerchantModel.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "QLMerchantModel/*.{h,m}",
+  "subspecs": [
+    {
+      "name": "Cell",
+      "source_files": "QLMerchantModel/Cell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "NetWorking",
+      "source_files": "QLMerchantModel/NetWorking/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Controller",
+      "source_files": "QLMerchantModel/Controller/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "View",
+      "source_files": "QLMerchantModel/View/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Model",
+      "source_files": "QLMerchantModel/Model/**/*.{h,m,c,mm}"
+    }
+  ]
+}

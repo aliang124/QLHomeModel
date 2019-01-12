@@ -10,6 +10,7 @@
 @interface WTEmptyItem : WTBaseItem
 @property (nonatomic,copy) UIColor *bgColor;
 + (id)initWithHeight:(float)height;
++ (id)initWithHeight:(float)height bgColor:(UIColor *)bColor;
 @end
 
 @interface WTEmptyCell : WTBaseCell

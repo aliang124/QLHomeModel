@@ -4,6 +4,28 @@ inhibit_all_warnings!
 target "WTDemo" do
     #基础组件
     pod 'WTBaseCore', :git => "https://github.com/jienliang000/WTBaseCore.git"
+    #网络请求组件
+    pod 'WTHttpUtil', :git => "https://github.com/jienliang000/WTHttpUtil.git"
+    #网络图片
+    pod 'WTWebImage', :git => "https://github.com/jienliang000/WTWebImage.git"
+    #页面内加载视图+空数据视图+网络错误视图
+    pod 'WTLoadingView', :git => "https://github.com/jienliang000/WTLoadingView.git"
+
     pod 'WTCyclePagerView', :git => "https://github.com/jienliang000/WTCyclePagerView.git"  #循环轮播组件
+    pod 'WTPagerController', :git => "https://github.com/jienliang000/WTPagerController.git"  #多标签滚动视图组件
+    pod 'WTImagePicker', :git => "https://github.com/jienliang000/WTImagePicker.git"  #相机图片选择和拍照
+    pod 'WTPhotoBrowser', :git => "https://github.com/jienliang000/WTPhotoBrowser.git"  #图片浏览
+
+    #业务数据和自定义view
+    pod 'QLBusiness', :git => "https://github.com/aliang124/QLBusiness.git"
+
+    #模块
+    pod 'QLADLaunchModel', :git => "https://github.com/aliang124/QLADLaunchModel.git" #启动广告位图
+    pod 'QLCareModel', :git => "https://github.com/aliang124/QLCareModel.git"#关注模块
+    pod 'QLTieBaModel', :git => "https://github.com/aliang124/QLTieBaModel.git"#浪吧模块
+    pod 'QLMineModel', :git => "https://github.com/aliang124/QLMineModel.git"#我的模块
+    pod 'QLLoginModel', :git => "https://github.com/aliang124/QLLoginModel.git" #登录模块
+    pod 'QLMerchantModel', :git => "https://github.com/aliang124/QLMerchantModel.git"#商家模块
+    pod 'CTMediator', '~> 13'
 end
 

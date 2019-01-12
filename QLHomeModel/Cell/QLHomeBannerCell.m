@@ -7,6 +7,7 @@
 //
 #import "QLHomeBannerCell.h"
 #import "WTBaseCore.h"
+#import "QLBusiness.h"
 #import "WTCyclePagerView.h"
 #import "WTPageControl.h"
 #import "WTCyclePagerViewCell.h"
@@ -35,6 +36,7 @@
 - (void)cellDidLoad
 {
     [super cellDidLoad];
+    self.backgroundColor = QL_NavBar_BgColor_Yellow;
     [self addPagerView];
     [self addPageControl];
 }

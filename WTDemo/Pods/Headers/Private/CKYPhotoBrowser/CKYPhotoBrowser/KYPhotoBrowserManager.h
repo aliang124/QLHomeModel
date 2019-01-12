@@ -1,0 +1,1 @@
+../../../../CKYPhotoBrowser/KYPhotoBrowser/PhotoBrowser/KYPhotoBrowserManager.h

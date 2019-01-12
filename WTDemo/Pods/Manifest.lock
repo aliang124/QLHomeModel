@@ -1,6 +1,101 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CKYPhotoBrowser (1.0.0):
+    - YYWebImage
+  - CTMediator (13)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (5.0.8)
+  - MBProgressHUD (1.1.0)
+  - QLADLaunchModel (0.0.1)
+  - QLBusiness (0.0.1):
+    - MBProgressHUD
+    - QLBusiness/AddressPicker (= 0.0.1)
+    - QLBusiness/Cell (= 0.0.1)
+    - QLBusiness/Controller (= 0.0.1)
+    - QLBusiness/Model (= 0.0.1)
+    - QLBusiness/Request (= 0.0.1)
+    - QLBusiness/Util (= 0.0.1)
+    - QLBusiness/View (= 0.0.1)
+  - QLBusiness/AddressPicker (0.0.1):
+    - MBProgressHUD
+  - QLBusiness/Cell (0.0.1):
+    - MBProgressHUD
+  - QLBusiness/Controller (0.0.1):
+    - MBProgressHUD
+  - QLBusiness/Model (0.0.1):
+    - MBProgressHUD
+  - QLBusiness/Request (0.0.1):
+    - MBProgressHUD
+  - QLBusiness/Util (0.0.1):
+    - MBProgressHUD
+  - QLBusiness/View (0.0.1):
+    - MBProgressHUD
+  - QLCareModel (0.0.1):
+    - QLCareModel/Cell (= 0.0.1)
+    - QLCareModel/View (= 0.0.1)
+  - QLCareModel/Cell (0.0.1)
+  - QLCareModel/View (0.0.1)
+  - QLLoginModel (0.0.1):
+    - QLLoginModel/Controller (= 0.0.1)
+    - QLLoginModel/NetWorking (= 0.0.1)
+    - QLLoginModel/Util (= 0.0.1)
+    - QLLoginModel/View (= 0.0.1)
+  - QLLoginModel/Controller (0.0.1)
+  - QLLoginModel/NetWorking (0.0.1)
+  - QLLoginModel/Util (0.0.1)
+  - QLLoginModel/View (0.0.1)
+  - QLMerchantModel (0.0.1):
+    - QLMerchantModel/Cell (= 0.0.1)
+    - QLMerchantModel/Controller (= 0.0.1)
+    - QLMerchantModel/Model (= 0.0.1)
+    - QLMerchantModel/NetWorking (= 0.0.1)
+    - QLMerchantModel/View (= 0.0.1)
+  - QLMerchantModel/Cell (0.0.1)
+  - QLMerchantModel/Controller (0.0.1)
+  - QLMerchantModel/Model (0.0.1)
+  - QLMerchantModel/NetWorking (0.0.1)
+  - QLMerchantModel/View (0.0.1)
+  - QLMineModel (0.0.1):
+    - QLMineModel/ABoutMe (= 0.0.1)
+    - QLMineModel/BabyRecord (= 0.0.1)
+    - QLMineModel/Cell (= 0.0.1)
+    - QLMineModel/FeedBack (= 0.0.1)
+    - QLMineModel/Funs (= 0.0.1)
+    - QLMineModel/GuanZhu (= 0.0.1)
+    - QLMineModel/Message (= 0.0.1)
+    - QLMineModel/NetWorking (= 0.0.1)
+    - QLMineModel/Setting (= 0.0.1)
+    - QLMineModel/UserInfo (= 0.0.1)
+  - QLMineModel/ABoutMe (0.0.1)
+  - QLMineModel/BabyRecord (0.0.1)
+  - QLMineModel/Cell (0.0.1)
+  - QLMineModel/FeedBack (0.0.1)
+  - QLMineModel/Funs (0.0.1)
+  - QLMineModel/GuanZhu (0.0.1)
+  - QLMineModel/Message (0.0.1)
+  - QLMineModel/NetWorking (0.0.1)
+  - QLMineModel/Setting (0.0.1)
+  - QLMineModel/UserInfo (0.0.1)
+  - QLTieBaModel (0.0.1):
+    - QLTieBaModel/Cell (= 0.0.1)
+    - QLTieBaModel/Detail (= 0.0.1)
+  - QLTieBaModel/Cell (0.0.1)
+  - QLTieBaModel/Detail (0.0.1)
+  - TZImagePickerController (2.0.0.9)
   - WTBaseCore (0.0.1):
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
@@ -13,6 +108,7 @@ PODS:
     - WTBaseCore/CoreUtil (= 0.0.1)
     - WTBaseCore/RETableViewManager (= 0.0.1)
     - WTBaseCore/WTAppDelegate (= 0.0.1)
+    - WTBaseCore/WTCustomNavBar (= 0.0.1)
   - WTBaseCore/CoreCell (0.0.1):
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
@@ -40,32 +136,154 @@ PODS:
   - WTBaseCore/WTAppDelegate (0.0.1):
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
+  - WTBaseCore/WTCustomNavBar (0.0.1):
+    - FDFullscreenPopGesture (~> 1.1)
+    - IQKeyboardManager (~> 5.0.7)
   - WTCyclePagerView (0.0.1)
+  - WTHttpUtil (0.0.1):
+    - AFNetworking (~> 3.1.0)
+    - YYWebImage (~> 1.0.5)
+  - WTImagePicker (0.0.1):
+    - TZImagePickerController (~> 2.0.0.7)
+  - WTLoadingView (0.0.1)
+  - WTPagerController (0.0.1)
+  - WTPhotoBrowser (0.0.1):
+    - CKYPhotoBrowser (~> 1.0.0)
+    - YYWebImage (~> 1.0.5)
+  - WTWebImage (0.0.1):
+    - YYWebImage (~> 1.0.5)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
+  - CTMediator (~> 13)
+  - QLADLaunchModel (from `https://github.com/aliang124/QLADLaunchModel.git`)
+  - QLBusiness (from `https://github.com/aliang124/QLBusiness.git`)
+  - QLCareModel (from `https://github.com/aliang124/QLCareModel.git`)
+  - QLLoginModel (from `https://github.com/aliang124/QLLoginModel.git`)
+  - QLMerchantModel (from `https://github.com/aliang124/QLMerchantModel.git`)
+  - QLMineModel (from `https://github.com/aliang124/QLMineModel.git`)
+  - QLTieBaModel (from `https://github.com/aliang124/QLTieBaModel.git`)
   - WTBaseCore (from `https://github.com/jienliang000/WTBaseCore.git`)
   - WTCyclePagerView (from `https://github.com/jienliang000/WTCyclePagerView.git`)
+  - WTHttpUtil (from `https://github.com/jienliang000/WTHttpUtil.git`)
+  - WTImagePicker (from `https://github.com/jienliang000/WTImagePicker.git`)
+  - WTLoadingView (from `https://github.com/jienliang000/WTLoadingView.git`)
+  - WTPagerController (from `https://github.com/jienliang000/WTPagerController.git`)
+  - WTPhotoBrowser (from `https://github.com/jienliang000/WTPhotoBrowser.git`)
+  - WTWebImage (from `https://github.com/jienliang000/WTWebImage.git`)
 
 EXTERNAL SOURCES:
+  QLADLaunchModel:
+    :git: https://github.com/aliang124/QLADLaunchModel.git
+  QLBusiness:
+    :git: https://github.com/aliang124/QLBusiness.git
+  QLCareModel:
+    :git: https://github.com/aliang124/QLCareModel.git
+  QLLoginModel:
+    :git: https://github.com/aliang124/QLLoginModel.git
+  QLMerchantModel:
+    :git: https://github.com/aliang124/QLMerchantModel.git
+  QLMineModel:
+    :git: https://github.com/aliang124/QLMineModel.git
+  QLTieBaModel:
+    :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTCyclePagerView:
     :git: https://github.com/jienliang000/WTCyclePagerView.git
+  WTHttpUtil:
+    :git: https://github.com/jienliang000/WTHttpUtil.git
+  WTImagePicker:
+    :git: https://github.com/jienliang000/WTImagePicker.git
+  WTLoadingView:
+    :git: https://github.com/jienliang000/WTLoadingView.git
+  WTPagerController:
+    :git: https://github.com/jienliang000/WTPagerController.git
+  WTPhotoBrowser:
+    :git: https://github.com/jienliang000/WTPhotoBrowser.git
+  WTWebImage:
+    :git: https://github.com/jienliang000/WTWebImage.git
 
 CHECKOUT OPTIONS:
+  QLADLaunchModel:
+    :commit: 727656369ad82ca2e04e22a759662b7baee2f8dd
+    :git: https://github.com/aliang124/QLADLaunchModel.git
+  QLBusiness:
+    :commit: f349562c893974c4b8755d51c85437c314cf4b41
+    :git: https://github.com/aliang124/QLBusiness.git
+  QLCareModel:
+    :commit: c054a43cb9f5484cf15b1eaf356773dada960d3c
+    :git: https://github.com/aliang124/QLCareModel.git
+  QLLoginModel:
+    :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
+    :git: https://github.com/aliang124/QLLoginModel.git
+  QLMerchantModel:
+    :commit: 69ad13b17644ed2702f7b3f9dd9fae4f7b6f96b1
+    :git: https://github.com/aliang124/QLMerchantModel.git
+  QLMineModel:
+    :commit: 4f249912bb589a26a5897a05b3ac9fe6afea713d
+    :git: https://github.com/aliang124/QLMineModel.git
+  QLTieBaModel:
+    :commit: 29cf84c2fa7057694bb5a3f8798d62c103e45356
+    :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
-    :commit: 11f445e141b9fc9a06eb458a330834e49dba9d7a
+    :commit: 5e10d00566080cb22b4acaef7c5bb0dea5a72bd9
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTCyclePagerView:
     :commit: 5806905a2b767426934cd0a72b2acb121d860fa3
     :git: https://github.com/jienliang000/WTCyclePagerView.git
+  WTHttpUtil:
+    :commit: 9aafb1cd11850da401f1a139cd7467203924203a
+    :git: https://github.com/jienliang000/WTHttpUtil.git
+  WTImagePicker:
+    :commit: 7b473ee5106cfb41c14f7e23419b742e6d2420b6
+    :git: https://github.com/jienliang000/WTImagePicker.git
+  WTLoadingView:
+    :commit: ad8c399dfa2ccab85c12d07b9f2237e666859770
+    :git: https://github.com/jienliang000/WTLoadingView.git
+  WTPagerController:
+    :commit: 445fc81659f788bd92c3a61e5ffefe2f0a08561f
+    :git: https://github.com/jienliang000/WTPagerController.git
+  WTPhotoBrowser:
+    :commit: 01251aa583b0ef238e03b59499b28c54b8bb5245
+    :git: https://github.com/jienliang000/WTPhotoBrowser.git
+  WTWebImage:
+    :commit: dfd91514f3b46329c95c03802b55340d13308a87
+    :git: https://github.com/jienliang000/WTWebImage.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CKYPhotoBrowser: ed30c642324e9341ce97709aa7afb82c7d1fdf96
+  CTMediator: 4cbf8ede42efc6b31715be88b78bdc9d94efa840
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
-  WTBaseCore: ce67f4ff76996a6702557a9fd068a96e9d51c618
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  QLADLaunchModel: 892d37065da2b02475794ed59a9132ca3c5dc083
+  QLBusiness: 2c4e9d0c50a04f8222450e9e33d55cc79d2bff32
+  QLCareModel: d3bbba4b7aae0df90b6153ab9496bf22f301a799
+  QLLoginModel: ba379e60d2afe6170803201999d962c047387abb
+  QLMerchantModel: 56c96d89c03b56953630004324cfd52ec6167781
+  QLMineModel: 7fc344f7b9df1b494c9594c38bbdd330256636c9
+  QLTieBaModel: dd2557d0895b5309e451c8d39165f4725b7794c3
+  TZImagePickerController: 9bf89512bb6de53e87897f2e17e607c126a199d6
+  WTBaseCore: c46847e84d6a933554f3bed7ea1a94ed729131b3
   WTCyclePagerView: d08fe21d23d29a01f1e8a597f3a3d5e1583c6262
+  WTHttpUtil: b0916168531e550290404710af37bb503c58c684
+  WTImagePicker: 57ba815ef694d36943967aeecd415f5760e8a7e6
+  WTLoadingView: 9dbaccb120201fe433bbf728095e3e6bb71d715b
+  WTPagerController: 77388a87329eb5a9f48707f3e9830a4516732208
+  WTPhotoBrowser: 678ba949d51b9657f6ecc511feeb2f002833baf7
+  WTWebImage: b7b7d007c097bba573355141b58f135166567017
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 4b65684501380a192861f1aba0ad8b8a3fce2488
+PODFILE CHECKSUM: 961d7fb116ef3c6da0f29bbf95ca3c4d97d0a09d
 
 COCOAPODS: 1.4.0

@@ -36,6 +36,9 @@
 
 - (void)textFieldDidChange:(UITextField *)textField {
      [self checkTextFieldMaxLen:self.maxLen];
+    if (self.textFieldDidChanged) {
+        self.textFieldDidChanged();
+    }
 }
 
 - (void)checkTextFieldMaxLen:(int)max {

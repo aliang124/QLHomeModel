@@ -61,6 +61,10 @@
     {
       "name": "WTAppDelegate",
       "source_files": "WTBaseCore/WTAppDelegate/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "WTCustomNavBar",
+      "source_files": "WTBaseCore/WTCustomNavBar/**/*.{h,m,c,mm,png}"
     }
   ]
 }

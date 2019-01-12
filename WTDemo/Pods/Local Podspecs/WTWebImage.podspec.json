@@ -1,0 +1,24 @@
+{
+  "name": "WTWebImage",
+  "version": "0.0.1",
+  "summary": "WTWebImage",
+  "homepage": "https://github.com/jienliang000/WTWebImage",
+  "license": "MIT",
+  "authors": {
+    "jienliang000": "jienliang000@163.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "YYWebImage": [
+      "~> 1.0.5"
+    ]
+  },
+  "source": {
+    "git": "https://github.com/jienliang000/WTWebImage.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "WTWebImage/*.{h,m}"
+}
