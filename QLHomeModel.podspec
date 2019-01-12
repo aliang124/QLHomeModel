@@ -19,4 +19,8 @@ Pod::Spec.new do |s|
   ss.source_files = 'QLHomeModel/Cell/**/*.{h,m,c,mm}'
   end
 
+  s.subspec 'NetWorking' do |ss|
+  ss.source_files = 'QLHomeModel/NetWorking/**/*.{h,m,c,mm}'
+  end
+
 end
