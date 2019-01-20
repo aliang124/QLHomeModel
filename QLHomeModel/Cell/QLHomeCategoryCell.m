@@ -51,6 +51,8 @@
         top = 22+(xxxx*56)+(xxxx*18);
 
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offsetX, top, widthHeight, 56)];
+        [btn addTarget:self action:@selector(iconBtnPress:) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = i;
         [self.contentView addSubview:btn];
         
         UIImageView *iconImg = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, widthHeight, widthHeight)];
@@ -69,5 +71,11 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+}
+
+- (void)iconBtnPress:(UIButton *)btn {
+    if (self.item.iconPressHandler) {
+        self.item.iconPressHandler(self.item.datas[btn.tag]);
+    }
 }
 @end

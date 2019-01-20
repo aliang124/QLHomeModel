@@ -9,6 +9,7 @@
 
 @interface QLHomeCategoryItem : RETableViewItem
 @property (nonatomic, copy) NSArray *datas;
+@property (copy, readwrite, nonatomic) void (^iconPressHandler)(id info);
 @end
 
 @interface QLHomeCategoryCell : RETableViewCell
