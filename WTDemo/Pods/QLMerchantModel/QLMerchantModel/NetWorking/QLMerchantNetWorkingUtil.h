@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface QLMerchantNetWorkingUtil : NSObject
-
++ (void)getBusinessCategory:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
++ (void)getBusinessIndex:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
++ (void)getBusinessDetail:(NSString *)businessId successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
 @end
-
-NS_ASSUME_NONNULL_END

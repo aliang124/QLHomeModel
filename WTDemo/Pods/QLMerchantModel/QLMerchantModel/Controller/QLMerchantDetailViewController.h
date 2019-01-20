@@ -9,4 +9,5 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 @interface QLMerchantDetailViewController : QLFormViewController
+@property (nonatomic,copy) NSString *businessId;
 @end

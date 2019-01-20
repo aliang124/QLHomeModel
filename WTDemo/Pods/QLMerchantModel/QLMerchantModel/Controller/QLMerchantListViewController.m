@@ -11,41 +11,67 @@
 #import "QLBusiness.h"
 #import "QLMerchantListCell.h"
 #import "QLMerchantDetailViewController.h"
+#import "QLMerchantNetWorkingUtil.h"
+
 @interface QLMerchantListViewController ()<QLDropDownMenuDataSource,QLDropDownMenuDelegate>
 {
-    NSMutableArray *_data1;
     NSMutableArray *_data2;
-    NSMutableArray *_data3;
     
     NSInteger _currentData1Index;
     NSInteger _currentData2Index;
     NSInteger _currentData3Index;
 }
+@property (nonatomic,strong) QLDropDownMenu *menu;
+@property (nonatomic,copy) NSArray *labelData;
+@property (nonatomic,copy) NSArray *categoryData;
+@property (nonatomic,copy) NSArray *sortData;
+@property (nonatomic,strong) NSMutableArray *dataArray;
+
 @end
 
 @implementation QLMerchantListViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.title = @"商家列表";
-    
     self.formTable.top = 44 + WT_NavBar_Height;
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-44;
+    self.dataArray = [[NSMutableArray alloc] init];
     
-    _data1 = [NSMutableArray arrayWithObjects:@"美食", @"娱乐", @"影视", @"表演", nil];
     _data2 = [NSMutableArray arrayWithObjects:@"小于3km", @"3-5km", @"5-10km", @"20km以上", nil];
-    _data3 = [NSMutableArray arrayWithObjects:@"不限人数", @"单人餐", @"双人餐", @"3~4人餐", nil];
-    
-    QLDropDownMenu *menu = [[QLDropDownMenu alloc] initWithOrigin:CGPointMake(0, WT_NavBar_Height) andHeight:44];
-    menu.indicatorColor = [UIColor colorWithRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0];
-    menu.separatorColor = WT_Color_Line;
-    menu.textColor = QL_UserName_TitleColor_Black;
-    menu.dataSource = self;
-    menu.delegate = self;
-    [self.view addSubview:menu];
-
-    
     self.formManager[@"QLMerchantListItem"] = @"QLMerchantListCell";
-    [self initForm];
+    
+    [QLMerchantNetWorkingUtil getBusinessCategory:nil successHandler:^(id json) {
+        self.labelData = json[@"labelData"];
+        self.categoryData = json[@"categoryData"];
+        self.sortData = json[@"sortData"];
+        [self createMenu];
+    } failHandler:^(NSString *message) {
+        NSLog(@"bbbbbbb");
+    }];
+    
+    [QLMerchantNetWorkingUtil getBusinessIndex:nil successHandler:^(id json) {
+        NSArray *ar = json[@"businessData"];
+        if (ar && [ar isKindOfClass:[NSArray class]]) {
+            [self.dataArray addObjectsFromArray:ar];
+        }
+        [self initForm];
+    } failHandler:^(NSString *message) {
+        NSLog(@"bbbbbbb");
+    }];
+}
+
+- (void)createMenu {
+    if (_menu) {
+        [_menu removeFromSuperview];
+        _menu = nil;
+    }
+    _menu = [[QLDropDownMenu alloc] initWithOrigin:CGPointMake(0, WT_NavBar_Height) andHeight:44];
+    _menu.indicatorColor = [UIColor colorWithRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0];
+    _menu.separatorColor = WT_Color_Line;
+    _menu.textColor = QL_UserName_TitleColor_Black;
+    _menu.dataSource = self;
+    _menu.delegate = self;
+    [self.view addSubview:_menu];
 }
 
 - (NSInteger)numberOfColumnsInMenu:(QLDropDownMenu *)menu {
@@ -67,22 +93,25 @@
 
 - (NSInteger)menu:(QLDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column leftOrRight:(NSInteger)leftOrRight leftRow:(NSInteger)leftRow{
     if (column==0) {
-        return _data1.count;
+        return self.labelData.count;
     } else if (column==1){
         return _data2.count;
     } else if (column==2){
-        return _data3.count;
+        return self.sortData.count;
     }
     return 0;
 }
 
 - (NSString *)menu:(QLDropDownMenu *)menu titleForColumn:(NSInteger)column{
     switch (column) {
-        case 0: return _data1[0];
+        case 0:
+            return self.labelData[0][@"name"];
             break;
-        case 1: return _data2[0];
+        case 1:
+            return _data2[0];
             break;
-        case 2: return _data3[0];
+        case 2:
+            return self.sortData[0][@"name"];
             break;
         default:
             return nil;
@@ -92,11 +121,11 @@
 
 - (NSString *)menu:(QLDropDownMenu *)menu titleForRowAtIndexPath:(QLIndexPath *)indexPath {
     if (indexPath.column==0) {
-        return _data1[indexPath.row];
+        return self.labelData[indexPath.row][@"name"];
     } else if (indexPath.column==1) {
         return _data2[indexPath.row];
     } else {
-        return _data3[indexPath.row];
+        return self.sortData[indexPath.row][@"name"];
     }
 }
 
@@ -123,10 +152,12 @@
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
     
-    for (int i = 0; i < 210; i++) {
+    for (int i = 0; i < self.dataArray.count; i++) {
         QLMerchantListItem *it = [[QLMerchantListItem alloc] init];
-        it.selectionHandler = ^(id item) {
+        it.info = self.dataArray[i];
+        it.selectionHandler = ^(QLMerchantListItem *item) {
             QLMerchantDetailViewController *detail = [[QLMerchantDetailViewController alloc] init];
+            detail.businessId = [WTUtil strRelay:item.info[@"id"]];
             [weakSelf.navigationController pushViewController:detail animated:YES];
         };
         [section0 addItem:it];

@@ -8,6 +8,7 @@
 #import "QLMerchantListCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLMerchantListItem
 - (id)init{
@@ -38,7 +39,6 @@
 {
     [super cellDidLoad];
     iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(12, 12, 112, 84)];
-    iconImage.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:iconImage];
     
     titleLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImage.right+12, 16, WTScreenWidth-iconImage.right-12-12, 13)];
@@ -76,13 +76,15 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    titleLab.text = @"Lunaluz露娜家亲子餐厅";
+    [iconImage setWebImageWithUrl:[WTUtil strRelay:self.item.info[@"logo"]] placeHolder:nil];
+    
+    titleLab.text = [WTUtil strRelay:self.item.info[@"name"]];
     ageLab.text = @"0-12岁";
     tagLab.text = @"西餐";
     [tagLab sizeToFit];
     tagLab.width = tagLab.width+8;
     addrLab.frame = CGRectMake(tagLab.right+12, tagLab.top, WTScreenWidth-tagLab.right-12-12, 14);
-    addrLab.text = @"西城区西直门外大街1号购物中心B1...";
+    addrLab.text = [WTUtil strRelay:self.item.info[@"address"]];
 }
 
 - (void)layoutSubviews

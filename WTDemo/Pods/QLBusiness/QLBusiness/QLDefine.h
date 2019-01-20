@@ -45,4 +45,18 @@
 #define QL_TableView_LineColor WTColorHex(0xDDE5EA)
 #define QL_Border_LineColor WTColorHex(0xDBDBDB)
 
+
+#define QL_MULPITLE [[UIScreen mainScreen] bounds].size.width / 360
+#define QL_MULPITLE_Font(size) [UIFont fontWithName:@"Helvetica-Light" size:s / 2 * QL_MULPITLE]
+
+CG_INLINE CGRect CGRectMakes(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
+{
+    CGRect rect;
+    float secretNum = QL_MULPITLE;
+    rect.origin.x = x*secretNum; rect.origin.y = y*secretNum;
+    rect.size.width = width*secretNum; rect.size.height = height*secretNum;
+    
+    return rect;
+}
+
 #endif
