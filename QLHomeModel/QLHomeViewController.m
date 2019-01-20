@@ -69,28 +69,28 @@
     for (int i = 0; i < 8; i++) {
         NSMutableDictionary *ddd = [[NSMutableDictionary alloc] init];
         if (i==0) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"meishi" forKey:@"icon"];
             [ddd setObject:@"美食餐饮" forKey:@"title"];
         } else if (i==1) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"sheying" forKey:@"icon"];
             [ddd setObject:@"孕妇摄影" forKey:@"title"];
         } else if (i==2) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"gouwu" forKey:@"icon"];
             [ddd setObject:@"母婴购物" forKey:@"title"];
         } else if (i==3) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"yuezi" forKey:@"icon"];
             [ddd setObject:@"月子会所" forKey:@"title"];
         } else if (i==4) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"huli" forKey:@"icon"];
             [ddd setObject:@"月子护理" forKey:@"title"];
         } else if (i==5) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"taijiao" forKey:@"icon"];
             [ddd setObject:@"胎教中心" forKey:@"title"];
         } else if (i==6) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"yiyuan" forKey:@"icon"];
             [ddd setObject:@"妇幼医院" forKey:@"title"];
         } else if (i==7) {
-            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"quanbu" forKey:@"icon"];
             [ddd setObject:@"全部分类" forKey:@"title"];
         }
         [categoryData addObject:ddd];

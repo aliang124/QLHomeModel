@@ -54,6 +54,7 @@
         [self.contentView addSubview:btn];
         
         UIImageView *iconImg = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, widthHeight, widthHeight)];
+        [iconImg setImage:[UIImage imageNamed:dic[@"icon"]]];
         [btn addSubview:iconImg];
         
         UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMakes(0, widthHeight+3, btn.width, 9)];
