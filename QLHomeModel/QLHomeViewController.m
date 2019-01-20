@@ -13,7 +13,7 @@
 #import <CTMediator.h>
 #import "QLHomeNetWorkingUtil.h"
 #import "QLHomeCategoryCell.h"
-
+#import "QLHomeHotTagCell.h"
 @interface QLHomeViewController ()
 @property (nonatomic,copy) NSArray *categoryArray;
 @property (nonatomic,copy) NSArray *ageArray;
@@ -26,6 +26,7 @@
     [super viewDidLoad];
     self.formManager[@"QLHomeBannerItem"] = @"QLHomeBannerCell";
     self.formManager[@"QLHomeCategoryItem"] = @"QLHomeCategoryCell";
+    self.formManager[@"QLHomeHotTagItem"] = @"QLHomeHotTagCell";
     self.navBar.leftItemList = [NSArray array];
     [self setControllerTitle];
     
@@ -104,6 +105,8 @@
     [section0 addItem:itCategory];
         
     [section0 addItem:[WTEmptyItem initWithHeight:12]];
+    
+    [section0 addItem:[[QLHomeHotTagItem alloc] init]];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

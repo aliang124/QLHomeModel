@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
+		50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeHotTagCell.m; sourceTree = "<group>"; };
+		50CE09B521F4641D006E7670 /* QLHomeHotTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeHotTagCell.h; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 		50DADD1C219437AD00DA8BFE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				50CE09B521F4641D006E7670 /* QLHomeHotTagCell.h */,
+				50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */,
 				50EE219721EA1A8200E1D9D1 /* QLHomeCategoryCell.h */,
 				50EE219621EA1A8200E1D9D1 /* QLHomeCategoryCell.m */,
 				50DADD20219439EF00DA8BFE /* WTCyclePagerViewCell.h */,
@@ -273,6 +278,7 @@
 			files = (
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
 				50DADD1F2194382B00DA8BFE /* QLHomeBannerCell.m in Sources */,
+				50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */,
 				50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */,
 				50EE219521EA152800E1D9D1 /* QLHomeNetWorkingUtil.m in Sources */,
 				50DADD22219439F000DA8BFE /* WTCyclePagerViewCell.m in Sources */,
