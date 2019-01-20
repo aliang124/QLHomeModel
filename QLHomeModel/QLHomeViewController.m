@@ -65,7 +65,38 @@
     it.datas = [NSArray arrayWithObjects:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453465&di=8d62405b2626eb79a8b3ca40ae5bbfe6&imgtype=0&src=http%3A%2F%2Fs16.sinaimg.cn%2Fmw690%2F006bYgeozy7pHERVUC3df%26690",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453464&di=0b41a9f182baf71c4993b63874cbe179&imgtype=0&src=http%3A%2F%2Fs9.sinaimg.cn%2Fmw690%2F006bYgeozy7pHERNHmg18%26690",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453462&di=b3aeda0529188a8aacddc751c6cd06b6&imgtype=0&src=http%3A%2F%2Fs11.sinaimg.cn%2Fmw690%2F006bYgeozy7pHES81p87a%26690", nil];
     [section0 addItem:it];
     
+    NSMutableArray *categoryData = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 8; i++) {
+        NSMutableDictionary *ddd = [[NSMutableDictionary alloc] init];
+        if (i==0) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"美食餐饮" forKey:@"title"];
+        } else if (i==1) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"孕妇摄影" forKey:@"title"];
+        } else if (i==2) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"母婴购物" forKey:@"title"];
+        } else if (i==3) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"月子会所" forKey:@"title"];
+        } else if (i==4) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"月子护理" forKey:@"title"];
+        } else if (i==5) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"胎教中心" forKey:@"title"];
+        } else if (i==6) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"妇幼医院" forKey:@"title"];
+        } else if (i==7) {
+            [ddd setObject:@"" forKey:@"icon"];
+            [ddd setObject:@"全部分类" forKey:@"title"];
+        }
+        [categoryData addObject:ddd];
+    }
     QLHomeCategoryItem *itCategory = [[QLHomeCategoryItem alloc] init];
+    itCategory.datas = categoryData;
     itCategory.selectionHandler = ^(id item) {
         UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantListVC" params:nil shouldCacheTarget:NO];
         [self.navigationController pushViewController:vc animated:YES];

@@ -12,7 +12,7 @@
 @implementation QLHomeCategoryItem
 - (id)init{
     if (self = [super init]) {
-        self.cellHeight = 120;
+        self.cellHeight = 176*QL_MULPITLE;
     }
     return self;
 }
@@ -37,6 +37,32 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
+    [self.contentView removeAllSubviews];
+    
+    float top = 22;
+    float offsetX = 32;
+    float widthHeight = 44;
+    float offsetBtn = 40;
+    for (int i = 0; i < self.item.datas.count; i++) {
+        NSDictionary *dic = self.item.datas[i];
+        offsetX = 32+(offsetBtn * (i%4))+(i%4)*widthHeight;
+
+        int xxxx = i/4;
+        top = 22+(xxxx*56)+(xxxx*18);
+
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offsetX, top, widthHeight, 56)];
+        [self.contentView addSubview:btn];
+        
+        UIImageView *iconImg = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, widthHeight, widthHeight)];
+        [btn addSubview:iconImg];
+        
+        UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMakes(0, widthHeight+3, btn.width, 9)];
+        titleLab.font = WTFontSys(10);
+        titleLab.textColor = QL_DateTextColor_Gray;
+        titleLab.textAlignment = NSTextAlignmentCenter;
+        titleLab.text = [WTUtil strRelay:dic[@"title"]];
+        [btn addSubview:titleLab];
+    }
 }
 
 - (void)layoutSubviews
