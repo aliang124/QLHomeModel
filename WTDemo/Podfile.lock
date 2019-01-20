@@ -224,7 +224,7 @@ CHECKOUT OPTIONS:
     :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
     :git: https://github.com/aliang124/QLLoginModel.git
   QLMerchantModel:
-    :commit: f5fe7e4e155f7ab1cbb9fe68cd31808f23c1fff3
+    :commit: 62134e2e2325df5a33b6d73278d1ba65411bdd62
     :git: https://github.com/aliang124/QLMerchantModel.git
   QLMineModel:
     :commit: 4f249912bb589a26a5897a05b3ac9fe6afea713d

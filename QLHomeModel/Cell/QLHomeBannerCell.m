@@ -11,11 +11,12 @@
 #import "WTCyclePagerView.h"
 #import "WTPageControl.h"
 #import "WTCyclePagerViewCell.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLHomeBannerItem
 - (id)init{
     if (self = [super init]) {
-        self.cellHeight = 120;
+        self.cellHeight = 152 * QL_MULPITLE;
         self.hasBottomLine = NO;
         self.canHighlighted = NO;
     }
@@ -36,14 +37,14 @@
 - (void)cellDidLoad
 {
     [super cellDidLoad];
-    self.backgroundColor = QL_NavBar_BgColor_Yellow;
+    self.backgroundColor = [UIColor whiteColor];
     [self addPagerView];
     [self addPageControl];
 }
 
 - (void)addPagerView {
     WTCyclePagerView *pagerView = [[WTCyclePagerView alloc]init];
-    pagerView.frame = CGRectMake(0, 0, WTScreenWidth, 120);
+    pagerView.frame = CGRectMakes(0, 0, 360, 152);
     pagerView.isInfiniteLoop = YES;
     pagerView.autoScrollInterval = 3.0;
     pagerView.dataSource = self;
@@ -58,8 +59,8 @@
     pageControl.frame = CGRectMake(0, CGRectGetHeight(_pagerView.frame) - 20, CGRectGetWidth(_pagerView.frame), 20);
     pageControl.currentPageIndicatorSize = CGSizeMake(6, 6);
     pageControl.pageIndicatorSize = CGSizeMake(6, 6);
-    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    pageControl.pageIndicatorTintColor = [UIColor grayColor];
+//    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+//    pageControl.pageIndicatorTintColor = [UIColor grayColor];
     [_pagerView addSubview:pageControl];
     _pageControl = pageControl;
 }
@@ -83,8 +84,8 @@
 
 - (nonnull WTCyclePagerViewLayout *)layoutForPagerView:(nonnull WTCyclePagerView *)pageView {
     WTCyclePagerViewLayout *layout = [[WTCyclePagerViewLayout alloc]init];
-    layout.itemSize = CGSizeMake(CGRectGetWidth(pageView.frame)*0.95, CGRectGetHeight(pageView.frame)*1);
-    layout.itemSpacing = 10;
+    layout.itemSize = CGSizeMake(CGRectGetWidth(pageView.frame)*1, CGRectGetHeight(pageView.frame)*1);
+//    layout.itemSpacing = 10;
     layout.itemHorizontalCenter = YES;
     return layout;
 }
@@ -95,8 +96,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)pagerView:(nonnull WTCyclePagerView *)pagerView cellForItemAtIndex:(NSInteger)index {
     WTCyclePagerViewCell *cell = [pagerView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndex:index];
-    cell.backgroundColor = [UIColor redColor];
-    cell.label.text = [NSString stringWithFormat:@"index->%ld",index];
+    [cell.bgImageView setWebImageWithUrl:self.item.datas[index] placeHolder:nil];
     return cell;
 }
 

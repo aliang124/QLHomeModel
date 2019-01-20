@@ -9,6 +9,8 @@
 #import "QLPicturesViewController.h"
 #import "HomeCell.h"
 #import <CKYPhotoBrowser/KYPhotoBrowserController.h>
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
 
 @interface QLPicturesViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, KYPhotoBrowserControllerDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;

@@ -17,6 +17,9 @@
 #import "QLMerchantTagCell.h"
 #import "QLMerchantAddressPhoneCell.h"
 #import "QLMerchantTitleCell.h"
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
+
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end

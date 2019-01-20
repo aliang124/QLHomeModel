@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WTCyclePagerViewCell : UICollectionViewCell
-
-@property (nonatomic, weak, readonly) UILabel *label;
-
+@property (nonatomic, strong) UIImageView *bgImageView;
 @end

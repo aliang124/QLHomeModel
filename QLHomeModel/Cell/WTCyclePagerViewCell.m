@@ -9,7 +9,6 @@
 #import "WTCyclePagerViewCell.h"
 
 @interface WTCyclePagerViewCell ()
-@property (nonatomic, weak) UILabel *label;
 @end
 
 @implementation WTCyclePagerViewCell
@@ -17,32 +16,14 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
-        [self addLabel];
+        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, frame.size.width, frame.size.height)];
+        [self.contentView addSubview:_bgImageView];
     }
     return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        self.backgroundColor = [UIColor clearColor];
-        [self addLabel];
-    }
-    return self;
-}
-
-
-- (void)addLabel {
-    UILabel *label = [[UILabel alloc]init];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont systemFontOfSize:18];
-    [self addSubview:label];
-    _label = label;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _label.frame = self.bounds;
 }
 
 @end
