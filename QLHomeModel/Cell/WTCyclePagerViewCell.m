@@ -16,7 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
-        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, frame.size.width, frame.size.height)];
+        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self.contentView addSubview:_bgImageView];
     }
     return self;
