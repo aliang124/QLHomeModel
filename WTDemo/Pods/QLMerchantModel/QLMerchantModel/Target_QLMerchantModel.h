@@ -10,4 +10,5 @@
 
 @interface Target_QLMerchantModel : NSObject
 - (UIViewController *)Action_merchantListVC:(NSDictionary*)param;
+- (UIViewController *)Action_merchantDetailVC:(NSDictionary*)param;
 @end

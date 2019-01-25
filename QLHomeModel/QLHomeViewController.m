@@ -14,6 +14,9 @@
 #import "QLHomeNetWorkingUtil.h"
 #import "QLHomeCategoryCell.h"
 #import "QLHomeHotTagCell.h"
+#import "QLHomeMerchantListCell.h"
+#import "QLHomeTieZiCell.h"
+
 @interface QLHomeViewController ()
 @property (nonatomic,copy) NSArray *categoryArray;
 @property (nonatomic,copy) NSArray *ageArray;
@@ -27,6 +30,11 @@
     self.formManager[@"QLHomeBannerItem"] = @"QLHomeBannerCell";
     self.formManager[@"QLHomeCategoryItem"] = @"QLHomeCategoryCell";
     self.formManager[@"QLHomeHotTagItem"] = @"QLHomeHotTagCell";
+    self.formManager[@"QLHomeMerchantListItem"] = @"QLHomeMerchantListCell";
+    self.formManager[@"QLHomeTieZiItem"] = @"QLHomeTieZiCell";
+    
+    self.formTable.height = WTScreenHeight-WT_NavBar_Height-WT_TabBar_Height;
+
     self.navBar.leftItemList = [NSArray array];
     [self setControllerTitle];
     
@@ -59,6 +67,8 @@
 }
 
 - (void)initForm {
+    WT(weakSelf);
+    
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
     
@@ -100,13 +110,31 @@
     itCategory.datas = categoryData;
     itCategory.iconPressHandler = ^(id info) {
         UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantListVC" params:nil shouldCacheTarget:NO];
-        [self.navigationController pushViewController:vc animated:YES];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     [section0 addItem:itCategory];
         
     [section0 addItem:[WTEmptyItem initWithHeight:12]];
     
     [section0 addItem:[[QLHomeHotTagItem alloc] init]];
+    
+    for (int i = 0; i < 4; i++) {
+        QLHomeMerchantListItem *itMerchant = [[QLHomeMerchantListItem alloc] init];
+        itMerchant.selectionHandler = ^(id item) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantDetailVC" params:nil shouldCacheTarget:NO];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        };
+        [section0 addItem:itMerchant];
+    }
+    
+    for (int i = 0; i < 3; i++) {
+        QLHomeTieZiItem *itTie = [[QLHomeTieZiItem alloc] init];
+        itTie.selectionHandler = ^(id item) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLTieBaModel" action:@"tieBaDetailVC" params:nil shouldCacheTarget:NO];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        };
+        [section0 addItem:itTie];
+    }
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

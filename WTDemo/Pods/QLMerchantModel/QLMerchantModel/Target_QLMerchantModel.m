@@ -8,9 +8,16 @@
 
 #import "Target_QLMerchantModel.h"
 #import "QLMerchantListViewController.h"
+#import "QLMerchantDetailViewController.h"
+
 @implementation Target_QLMerchantModel
 - (UIViewController *)Action_merchantListVC:(NSDictionary*)param {
-    QLMerchantListViewController *login = [[QLMerchantListViewController alloc] init];
-    return login;
+    QLMerchantListViewController *vc = [[QLMerchantListViewController alloc] init];
+    return vc;
+}
+
+- (UIViewController *)Action_merchantDetailVC:(NSDictionary*)param {
+    QLMerchantDetailViewController *vc = [[QLMerchantDetailViewController alloc] init];
+    return vc;
 }
 @end

@@ -47,6 +47,10 @@
     UIView *yellowLine2 = [[UIView alloc] initWithFrame:CGRectMakes(titleLab.right+4, 15, 9, 1)];
     yellowLine2.backgroundColor = QL_NavBar_BgColor_Yellow;
     [self.contentView addSubview:yellowLine2];
+    
+    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, 30.5, WTScreenWidth, 0.5)];
+    bottomLine.backgroundColor = QL_TableView_LineColor;
+    [self.contentView addSubview:bottomLine];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
