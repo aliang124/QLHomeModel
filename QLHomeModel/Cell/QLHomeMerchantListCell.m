@@ -65,8 +65,8 @@
     tagLab.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:tagLab];
     
-    lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(iconImage.right+12, 108-WT_Line_Height, WTScreenWidth-iconImage.right-12, WT_Line_Height)];
-    lineImg.backgroundColor = WT_Color_Line;
+    lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(iconImage.right+12, 108-0.5, WTScreenWidth-iconImage.right-12, 0.5)];
+    lineImg.backgroundColor = QL_Border_LineColor;
     [self.contentView addSubview:lineImg];
 }
 

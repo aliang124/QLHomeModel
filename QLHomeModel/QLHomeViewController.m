@@ -127,8 +127,9 @@
     [section0 addItem:[[QLHomeHotTagItem alloc] init]];
     
     for (int i = 0; i < self.businessArray.count; i++) {
+        NSDictionary *dict = self.businessArray[i];
         QLHomeMerchantListItem *itMerchant = [[QLHomeMerchantListItem alloc] init];
-        itMerchant.info = self.businessArray[i];
+        itMerchant.info = dict;
         itMerchant.selectionHandler = ^(QLHomeMerchantListItem *item) {
             UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantDetailVC" params:item.info shouldCacheTarget:NO];
             [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -137,8 +138,10 @@
     }
     
     for (int i = 0; i < self.articleArray.count; i++) {
+        NSDictionary *dic = self.articleArray[i];
         QLHomeTieZiItem *itTie = [[QLHomeTieZiItem alloc] init];
-        itTie.userInfo = self.articleArray[i];
+        itTie.userInfo = dic;
+        itTie.titleText = [WTUtil strRelay:dic[@"title"]];
         itTie.selectionHandler = ^(QLHomeTieZiItem *item) {
             UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLTieBaModel" action:@"tieBaDetailVC" params:item.userInfo shouldCacheTarget:NO];
             [weakSelf.navigationController pushViewController:vc animated:YES];

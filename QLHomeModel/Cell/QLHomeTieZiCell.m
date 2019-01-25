@@ -112,10 +112,8 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    self.backgroundColor = WT_Color_ViewBackGround;
-    self.contentView.backgroundColor = WT_Color_ViewBackGround;
     //
-    titleLab.text = @"爸妈做到这5点，宝宝将来不愁大长腿！";
+    titleLab.text = self.item.titleText;
     descLab.text = @"青春期是长高的一个黄金期，爸妈都知道，小南就略过不提。重点说说爸妈可能忽略的“3岁前”吧。先说说宝宝身高增长的";
 
     //标题自适应高度缓存
@@ -158,8 +156,8 @@
     [netImg1 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
     [netImg2 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
     [netImg3 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
-
     self.item.cellHeight = tagLab.bottom+12;
+    lineImg.top = self.item.cellHeight-0.5;
 }
 
 - (void)layoutSubviews

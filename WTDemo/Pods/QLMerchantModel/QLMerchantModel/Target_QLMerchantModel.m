@@ -18,6 +18,7 @@
 
 - (UIViewController *)Action_merchantDetailVC:(NSDictionary*)param {
     QLMerchantDetailViewController *vc = [[QLMerchantDetailViewController alloc] init];
+    vc.businessId = param[@"id"];
     return vc;
 }
 @end
