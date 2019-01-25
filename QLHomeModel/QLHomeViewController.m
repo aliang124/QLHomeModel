@@ -21,6 +21,7 @@
 @property (nonatomic,copy) NSArray *categoryArray;
 @property (nonatomic,copy) NSArray *ageArray;
 @property (nonatomic,copy) NSArray *businessArray;
+@property (nonatomic,strong) NSMutableArray *articleArray;
 @end
 
 @implementation QLHomeViewController
@@ -32,6 +33,7 @@
     self.formManager[@"QLHomeHotTagItem"] = @"QLHomeHotTagCell";
     self.formManager[@"QLHomeMerchantListItem"] = @"QLHomeMerchantListCell";
     self.formManager[@"QLHomeTieZiItem"] = @"QLHomeTieZiCell";
+    self.articleArray = [[NSMutableArray alloc] init];
     
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-WT_TabBar_Height;
 
@@ -57,6 +59,12 @@
         self.ageArray = json[@"ageData"];
         self.categoryArray = json[@"categoryData"];
         self.businessArray = json[@"businessData"];
+        id articleData = json[@"articleData"];
+        if ([articleData isKindOfClass:[NSDictionary class]]) {
+            [self.articleArray addObject:articleData];
+        } else if ([articleData isKindOfClass:[NSArray class]]) {
+            [self.articleArray addObjectsFromArray:articleData];
+        }
         [self initForm];
     } failHandler:^(NSString *message) {
     }];
@@ -118,19 +126,21 @@
     
     [section0 addItem:[[QLHomeHotTagItem alloc] init]];
     
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < self.businessArray.count; i++) {
         QLHomeMerchantListItem *itMerchant = [[QLHomeMerchantListItem alloc] init];
-        itMerchant.selectionHandler = ^(id item) {
-            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantDetailVC" params:nil shouldCacheTarget:NO];
+        itMerchant.info = self.businessArray[i];
+        itMerchant.selectionHandler = ^(QLHomeMerchantListItem *item) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantDetailVC" params:item.info shouldCacheTarget:NO];
             [weakSelf.navigationController pushViewController:vc animated:YES];
         };
         [section0 addItem:itMerchant];
     }
     
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < self.articleArray.count; i++) {
         QLHomeTieZiItem *itTie = [[QLHomeTieZiItem alloc] init];
-        itTie.selectionHandler = ^(id item) {
-            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLTieBaModel" action:@"tieBaDetailVC" params:nil shouldCacheTarget:NO];
+        itTie.userInfo = self.articleArray[i];
+        itTie.selectionHandler = ^(QLHomeTieZiItem *item) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLTieBaModel" action:@"tieBaDetailVC" params:item.userInfo shouldCacheTarget:NO];
             [weakSelf.navigationController pushViewController:vc animated:YES];
         };
         [section0 addItem:itTie];

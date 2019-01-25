@@ -14,6 +14,7 @@
 @property (nonatomic,assign) float titleTextHeight;
 //缓存说明高度
 @property (nonatomic,assign) float descTextHeight;
+@property (nonatomic,copy) id userInfo;
 @end
 
 @interface QLHomeTieZiCell : RETableViewCell
