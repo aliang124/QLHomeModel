@@ -16,7 +16,6 @@
 		50DADCEF2192811B00DA8BFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCEE2192811B00DA8BFE /* main.m */; };
 		50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD002192870800DA8BFE /* QLHomeViewController.m */; };
 		50DADD1F2194382B00DA8BFE /* QLHomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD1E2194382B00DA8BFE /* QLHomeBannerCell.m */; };
-		50DADD22219439F000DA8BFE /* WTCyclePagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADD21219439F000DA8BFE /* WTCyclePagerViewCell.m */; };
 		50EE219521EA152800E1D9D1 /* QLHomeNetWorkingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE219421EA152800E1D9D1 /* QLHomeNetWorkingUtil.m */; };
 		50EE219821EA1A8200E1D9D1 /* QLHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE219621EA1A8200E1D9D1 /* QLHomeCategoryCell.m */; };
 /* End PBXBuildFile section */
@@ -38,8 +37,6 @@
 		50DADD002192870800DA8BFE /* QLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeViewController.m; sourceTree = "<group>"; };
 		50DADD1D2194382B00DA8BFE /* QLHomeBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeBannerCell.h; sourceTree = "<group>"; };
 		50DADD1E2194382B00DA8BFE /* QLHomeBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeBannerCell.m; sourceTree = "<group>"; };
-		50DADD20219439EF00DA8BFE /* WTCyclePagerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCyclePagerViewCell.h; sourceTree = "<group>"; };
-		50DADD21219439F000DA8BFE /* WTCyclePagerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCyclePagerViewCell.m; sourceTree = "<group>"; };
 		50EE219321EA152800E1D9D1 /* QLHomeNetWorkingUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLHomeNetWorkingUtil.h; sourceTree = "<group>"; };
 		50EE219421EA152800E1D9D1 /* QLHomeNetWorkingUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLHomeNetWorkingUtil.m; sourceTree = "<group>"; };
 		50EE219621EA1A8200E1D9D1 /* QLHomeCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeCategoryCell.m; sourceTree = "<group>"; };
@@ -115,8 +112,6 @@
 				50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */,
 				50EE219721EA1A8200E1D9D1 /* QLHomeCategoryCell.h */,
 				50EE219621EA1A8200E1D9D1 /* QLHomeCategoryCell.m */,
-				50DADD20219439EF00DA8BFE /* WTCyclePagerViewCell.h */,
-				50DADD21219439F000DA8BFE /* WTCyclePagerViewCell.m */,
 				50DADD1D2194382B00DA8BFE /* QLHomeBannerCell.h */,
 				50DADD1E2194382B00DA8BFE /* QLHomeBannerCell.m */,
 			);
@@ -290,7 +285,6 @@
 				50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */,
 				50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */,
 				50EE219521EA152800E1D9D1 /* QLHomeNetWorkingUtil.m in Sources */,
-				50DADD22219439F000DA8BFE /* WTCyclePagerViewCell.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219821EA1A8200E1D9D1 /* QLHomeCategoryCell.m in Sources */,
 				502CB11E21F80E6A007AB4A5 /* QLHomeTieZiCell.m in Sources */,
@@ -429,9 +423,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5EQM97VAW;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
 				INFOPLIST_FILE = WTDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -444,9 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5EQM97VAW;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
 				INFOPLIST_FILE = WTDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
