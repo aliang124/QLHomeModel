@@ -8,6 +8,7 @@
 #import "QLHomeCategoryCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLHomeCategoryItem
 - (id)init{
@@ -56,14 +57,14 @@
         [self.contentView addSubview:btn];
         
         UIImageView *iconImg = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, widthHeight, widthHeight)];
-        [iconImg setImage:[UIImage imageNamed:dic[@"icon"]]];
+        [iconImg setWebImageWithUrl:[WTUtil strRelay:dic[@"image"]] placeHolder:nil];
         [btn addSubview:iconImg];
         
         UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMakes(0, widthHeight+3, btn.width, 9)];
         titleLab.font = WTFontSys(10);
         titleLab.textColor = QL_DateTextColor_Gray;
         titleLab.textAlignment = NSTextAlignmentCenter;
-        titleLab.text = [WTUtil strRelay:dic[@"title"]];
+        titleLab.text = [WTUtil strRelay:dic[@"name"]];
         [btn addSubview:titleLab];
     }
 }

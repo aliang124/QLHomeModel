@@ -91,39 +91,8 @@
     QLHomeBannerItem *it = [[QLHomeBannerItem alloc] init];
     it.datas = self.bannerArray;
     [section0 addItem:it];
-    
-    NSMutableArray *categoryData = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 8; i++) {
-        NSMutableDictionary *ddd = [[NSMutableDictionary alloc] init];
-        if (i==0) {
-            [ddd setObject:@"meishi" forKey:@"icon"];
-            [ddd setObject:@"美食餐饮" forKey:@"title"];
-        } else if (i==1) {
-            [ddd setObject:@"sheying" forKey:@"icon"];
-            [ddd setObject:@"孕妇摄影" forKey:@"title"];
-        } else if (i==2) {
-            [ddd setObject:@"gouwu" forKey:@"icon"];
-            [ddd setObject:@"母婴购物" forKey:@"title"];
-        } else if (i==3) {
-            [ddd setObject:@"yuezi" forKey:@"icon"];
-            [ddd setObject:@"月子会所" forKey:@"title"];
-        } else if (i==4) {
-            [ddd setObject:@"huli" forKey:@"icon"];
-            [ddd setObject:@"月子护理" forKey:@"title"];
-        } else if (i==5) {
-            [ddd setObject:@"taijiao" forKey:@"icon"];
-            [ddd setObject:@"胎教中心" forKey:@"title"];
-        } else if (i==6) {
-            [ddd setObject:@"yiyuan" forKey:@"icon"];
-            [ddd setObject:@"妇幼医院" forKey:@"title"];
-        } else if (i==7) {
-            [ddd setObject:@"quanbu" forKey:@"icon"];
-            [ddd setObject:@"全部分类" forKey:@"title"];
-        }
-        [categoryData addObject:ddd];
-    }
     QLHomeCategoryItem *itCategory = [[QLHomeCategoryItem alloc] init];
-    itCategory.datas = categoryData;
+    itCategory.datas = self.categoryArray;
     itCategory.iconPressHandler = ^(id info) {
         UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMerchantModel" action:@"merchantListVC" params:nil shouldCacheTarget:NO];
         [weakSelf.navigationController pushViewController:vc animated:YES];
