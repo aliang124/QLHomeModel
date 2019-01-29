@@ -85,7 +85,6 @@
 - (nonnull WTCyclePagerViewLayout *)layoutForPagerView:(nonnull WTCyclePagerView *)pageView {
     WTCyclePagerViewLayout *layout = [[WTCyclePagerViewLayout alloc]init];
     layout.itemSize = CGSizeMake(CGRectGetWidth(pageView.frame)*1, CGRectGetHeight(pageView.frame)*1);
-//    layout.itemSpacing = 10;
     layout.itemHorizontalCenter = YES;
     return layout;
 }
@@ -96,13 +95,14 @@
 
 - (nonnull __kindof UICollectionViewCell *)pagerView:(nonnull WTCyclePagerView *)pagerView cellForItemAtIndex:(NSInteger)index {
     WTCyclePagerViewCell *cell = [pagerView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndex:index];
-    [cell.bgImageView setWebImageWithUrl:self.item.datas[index] placeHolder:nil];
+    NSString *url = [WTUtil strRelay:self.item.datas[index][@"image"]];
+    [cell.bgImageView setWebImageWithUrl:url placeHolder:nil];
     return cell;
 }
 
 - (void)pagerView:(WTCyclePagerView *)pageView didScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
     _pageControl.currentPage = toIndex;
     //[_pageControl setCurrentPage:newIndex animate:YES];
-    NSLog(@"%ld ->  %ld",fromIndex,toIndex);
+//    NSLog(@"%ld ->  %ld",fromIndex,toIndex);
 }
 @end

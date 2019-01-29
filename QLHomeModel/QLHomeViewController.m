@@ -16,12 +16,14 @@
 #import "QLHomeHotTagCell.h"
 #import "QLHomeMerchantListCell.h"
 #import "QLHomeTieZiCell.h"
+#import "WTLoadFailEmpty.h"
 
 @interface QLHomeViewController ()
 @property (nonatomic,copy) NSArray *categoryArray;
 @property (nonatomic,copy) NSArray *ageArray;
 @property (nonatomic,copy) NSArray *businessArray;
 @property (nonatomic,strong) NSMutableArray *articleArray;
+@property (nonatomic,strong) NSMutableArray *bannerArray;
 @end
 
 @implementation QLHomeViewController
@@ -34,12 +36,11 @@
     self.formManager[@"QLHomeMerchantListItem"] = @"QLHomeMerchantListCell";
     self.formManager[@"QLHomeTieZiItem"] = @"QLHomeTieZiCell";
     self.articleArray = [[NSMutableArray alloc] init];
-    
+    self.bannerArray = [[NSMutableArray alloc] init];
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-WT_TabBar_Height;
-
     self.navBar.leftItemList = [NSArray array];
-    [self setControllerTitle];
-    
+    self.navBar.title = @"首页";
+
     WTCustomBarItem *itRight = [[WTCustomBarItem alloc] init];
     itRight.itemStyle = 0;
     itRight.itemTitle = @"登录";
@@ -55,7 +56,9 @@
 }
 
 - (void)getHomeData {
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLHomeNetWorkingUtil getHomeIndex:nil successHandler:^(id json) {
+        [WTLoadingView1 hideAllLoadingForView:self.view];
         self.ageArray = json[@"ageData"];
         self.categoryArray = json[@"categoryData"];
         self.businessArray = json[@"businessData"];
@@ -65,23 +68,28 @@
         } else if ([articleData isKindOfClass:[NSArray class]]) {
             [self.articleArray addObjectsFromArray:articleData];
         }
+        
+        [self.bannerArray removeAllObjects];
+        NSArray *bArray = json[@"bannerData"];
+        if (bArray && bArray.count>0) {
+            [self.bannerArray addObjectsFromArray:bArray];
+        }
         [self initForm];
     } failHandler:^(NSString *message) {
+        [WTLoadingView1 hideAllLoadingForView:self.view];
+        [WTLoadFailView showFailInView:self.view retryPress:^{
+            [self getHomeData];
+        }];
     }];
-}
-
-- (void)setControllerTitle {
-    self.navBar.title = @"首页";
 }
 
 - (void)initForm {
     WT(weakSelf);
-    
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
     
     QLHomeBannerItem *it = [[QLHomeBannerItem alloc] init];
-    it.datas = [NSArray arrayWithObjects:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453465&di=8d62405b2626eb79a8b3ca40ae5bbfe6&imgtype=0&src=http%3A%2F%2Fs16.sinaimg.cn%2Fmw690%2F006bYgeozy7pHERVUC3df%26690",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453464&di=0b41a9f182baf71c4993b63874cbe179&imgtype=0&src=http%3A%2F%2Fs9.sinaimg.cn%2Fmw690%2F006bYgeozy7pHERNHmg18%26690",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453462&di=b3aeda0529188a8aacddc751c6cd06b6&imgtype=0&src=http%3A%2F%2Fs11.sinaimg.cn%2Fmw690%2F006bYgeozy7pHES81p87a%26690", nil];
+    it.datas = self.bannerArray;
     [section0 addItem:it];
     
     NSMutableArray *categoryData = [[NSMutableArray alloc] init];
