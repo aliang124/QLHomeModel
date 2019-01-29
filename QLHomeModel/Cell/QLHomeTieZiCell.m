@@ -107,15 +107,11 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
-//- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {}
-
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    //
-    titleLab.text = self.item.titleText;
-    descLab.text = @"青春期是长高的一个黄金期，爸妈都知道，小南就略过不提。重点说说爸妈可能忽略的“3岁前”吧。先说说宝宝身高增长的";
-
+    titleLab.text = [WTUtil strRelay:self.item.userInfo[@"title"]];
+    descLab.text = [WTUtil strRelay:self.item.userInfo[@"description"]];
     //标题自适应高度缓存
     if (self.item.titleTextHeight==5) {
         [titleLab sizeToFit];
@@ -153,9 +149,25 @@
     
     liulanIcon.top = netImg1.bottom+9;
     liulanIcon.left = liulanCountLab.left-5-10;
-    [netImg1 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
-    [netImg2 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
-    [netImg3 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
+    
+    NSString *imageOne = [WTUtil strRelay:self.item.userInfo[@"imageOne"]];
+    NSString *imageTwo = [WTUtil strRelay:self.item.userInfo[@"imageTwo"]];
+    NSString *imageThree = [WTUtil strRelay:self.item.userInfo[@"imageThree"]];
+    if (imageOne.length>0) {
+        [netImg1 setWebImageWithUrl:imageOne placeHolder:nil];
+    }
+    if (imageTwo.length>0) {
+        [netImg2 setWebImageWithUrl:imageTwo placeHolder:nil];
+    }
+    if (imageThree.length>0) {
+        [netImg3 setWebImageWithUrl:imageThree placeHolder:nil];
+    }
+    float imgWidth = (WTScreenWidth-12-12-10-10)/3;
+    //只有第一张图
+    netImg1.width = imgWidth;
+    if (imageOne.length!=0 && imageTwo.length==0 && imageThree.length==0) {
+        netImg1.width = WTScreenWidth-12-12;
+    }
     self.item.cellHeight = tagLab.bottom+12;
     lineImg.top = self.item.cellHeight-0.5;
 }

@@ -118,7 +118,6 @@
         NSDictionary *dic = self.articleArray[i];
         QLHomeTieZiItem *itTie = [[QLHomeTieZiItem alloc] init];
         itTie.userInfo = dic;
-        itTie.titleText = [WTUtil strRelay:dic[@"title"]];
         itTie.selectionHandler = ^(QLHomeTieZiItem *item) {
             UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLTieBaModel" action:@"tieBaDetailVC" params:item.userInfo shouldCacheTarget:NO];
             [weakSelf.navigationController pushViewController:vc animated:YES];

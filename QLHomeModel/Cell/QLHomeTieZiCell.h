@@ -8,7 +8,6 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 @interface QLHomeTieZiItem : RETableViewItem
-@property (nonatomic,copy) NSString *titleText;//标题
 @property (nonatomic,copy) NSString *descText;//标题说明
 //缓存标题高度
 @property (nonatomic,assign) float titleTextHeight;

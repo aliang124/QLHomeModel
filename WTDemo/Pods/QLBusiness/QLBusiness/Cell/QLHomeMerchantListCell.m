@@ -27,7 +27,9 @@
     UILabel *titleLab;
     UILabel *ageLab;
     UILabel *tagLab;
+    UIImageView *addrIcon;
     UILabel *addrLab;
+    UILabel *distanceLab;
     
     UIImageView *lineImg;
 }
@@ -53,7 +55,11 @@
     ageLab.textColor = QL_UserName_TitleColor_Black;
     [self.contentView addSubview:ageLab];
     
-    addrLab = [[UILabel alloc] initWithFrame:CGRectMake(titleLab.left, ageLab.bottom+7, titleLab.width, 9)];
+    addrIcon = [[UIImageView alloc] initWithFrame:CGRectMake(titleLab.left, ageLab.bottom+7, 10, 10)];
+    [addrIcon setImage:[UIImage imageNamed:@"dingwei"]];
+    [self.contentView addSubview:addrIcon];
+    
+    addrLab = [[UILabel alloc] initWithFrame:CGRectMake(addrIcon.right+5, ageLab.bottom+7, titleLab.width-15, 9)];
     addrLab.textColor = QL_DescColor_Gray;
     addrLab.font = WTFontSys(10);
     [self.contentView addSubview:addrLab];
@@ -65,25 +71,37 @@
     tagLab.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:tagLab];
     
+    distanceLab = [[UILabel alloc] initWithFrame:CGRectMake(tagLab.right, tagLab.top, WTScreenWidth-tagLab.right-13, 14)];
+    distanceLab.textColor = QL_DescColor_Gray;
+    distanceLab.font = WTFontSys(10);
+    distanceLab.textAlignment = NSTextAlignmentRight;
+    [self.contentView addSubview:distanceLab];
+    
     lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(iconImage.right+12, 108-0.5, WTScreenWidth-iconImage.right-12, 0.5)];
     lineImg.backgroundColor = QL_Border_LineColor;
     [self.contentView addSubview:lineImg];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
-//- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {}
 
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    [iconImage setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
-    
-    titleLab.text = @"Lunaluz露娜家亲子餐厅";
-    ageLab.text = @"0-12岁";
-    tagLab.text = @"西餐";
+    [iconImage setWebImageWithUrl:[WTUtil strRelay:self.item.info[@"logo"]] placeHolder:nil];
+    titleLab.text = [WTUtil strRelay:self.item.info[@"name"]];
+    ageLab.text = [WTUtil strRelay:self.item.info[@"ageGroup"]];
+    //分类标签
+    tagLab.text = [WTUtil strRelay:self.item.info[@"label"]];
     [tagLab sizeToFit];
     tagLab.width = tagLab.width+8;
-    addrLab.text = @"安徽省合肥市蜀山区长江西路288号好利来大酒店";
+    tagLab.height = tagLab.height+3;
+    [tagLab setNeedsDisplay];
+    //距离
+    double ttt = [[WTUtil strRelay:self.item.info[@"distance"]] doubleValue]/1000;
+    distanceLab.text = [NSString stringWithFormat:@"%0.1fkm",ttt];
+    distanceLab.frame = CGRectMake(tagLab.right, tagLab.top, WTScreenWidth-tagLab.right-13, tagLab.height);
+    //地址
+    addrLab.text = [WTUtil strRelay:self.item.info[@"address"]];
 }
 
 - (void)layoutSubviews
