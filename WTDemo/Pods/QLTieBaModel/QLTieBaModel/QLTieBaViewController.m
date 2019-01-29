@@ -10,9 +10,10 @@
 #import "QLSubTieBaViewController.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "QLTieBaNetWork.h"
 
 @interface QLTieBaViewController ()<WTTabPagerControllerDataSource,WTTabPagerControllerDelegate>
-@property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) NSMutableArray *catogeryList;
 @end
 
 @implementation QLTieBaViewController
@@ -20,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.leftItemList = [NSArray array];
+    _catogeryList = [[NSMutableArray alloc] init];
+    [self setControllerTitle];
     WT(bself);
     
     WTCustomBarItem *searchIt = [[WTCustomBarItem alloc] init];
@@ -37,9 +40,20 @@
     };
     self.navBar.rightItemList = [NSArray arrayWithObjects:msgIt,searchIt, nil];
     [self.navBar setNeedsLayout];
-
-    [self setControllerTitle];
-    [self setTabBarView];
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:@"1000" forKey:@"pageSize"];
+    [param setObject:@"1" forKey:@"page"];
+    [QLTieBaNetWork getTieBaCatogery:nil successHandler:^(id json) {
+        NSArray *ar = json[@"plateData"];
+        if (ar && ar.count>0) {
+            [bself.catogeryList addObjectsFromArray:ar];
+        }
+        [bself setTabBarView];
+        [bself reloadData];
+    } failHandler:^(NSString *message) {
+        NSLog(@"bbbb");
+    }];
 }
 
 - (void)setControllerTitle {
@@ -61,31 +75,21 @@
     self.dataSource = self;
     self.delegate = self;
     self.pagerController.view.frame = CGRectMake(0, 0, WTScreenWidth, WTScreenHeight - self.tabBarOrignY - self.tabBarHeight - WT_TabBar_Height);
-    
-    [self loadData];
-}
-
-- (void)loadData {
-    NSMutableArray *datas = [NSMutableArray array];
-    for (NSInteger i = 0; i < 15; ++i) {
-        [datas addObject:i%2 == 0 ? [NSString stringWithFormat:@"Tab %ld",i]:[NSString stringWithFormat:@"Tab Tab %ld",i]];
-    }
-    _datas = [datas copy];
-    [self reloadData];
 }
 
 #pragma mark - WTTabPagerControllerDataSource
 - (NSInteger)numberOfControllersInTabPagerController {
-    return _datas.count;
+    return self.catogeryList.count;
 }
 
 - (UIViewController *)tabPagerController:(WTTabPagerController *)tabPagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
-    QLSubTieBaViewController *VC = [[QLSubTieBaViewController alloc]init];
-    return VC;
+    QLSubTieBaViewController *vc = [[QLSubTieBaViewController alloc]init];
+    vc.catogeryInfo = self.catogeryList[index];
+    return vc;
 }
 
 - (NSString *)tabPagerController:(WTTabPagerController *)tabPagerController titleForIndex:(NSInteger)index {
-    NSString *title = _datas[index];
+    NSString *title = [WTUtil strRelay:self.catogeryList[index][@"name"]];
     return title;
 }
 

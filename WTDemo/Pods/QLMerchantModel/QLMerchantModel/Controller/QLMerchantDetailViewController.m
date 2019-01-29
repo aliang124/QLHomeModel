@@ -7,19 +7,8 @@
 //
 
 #import "QLMerchantDetailViewController.h"
-#import "WTLoadFailEmpty.h"
-#import "QLMerchantNetWorkingUtil.h"
-#import "QLMerchantPictureCell.h"
-#import "QLMerchantInfoCell.h"
-#import "QLPicturesViewController.h"
-#import "QLMerchantTagStarCell.h"
-#import "QLMerchantTagTimeCell.h"
-#import "QLMerchantTagCell.h"
-#import "QLMerchantAddressPhoneCell.h"
-#import "QLMerchantTitleCell.h"
-#import "WTBaseCore.h"
-#import "QLBusiness.h"
-
+#import "QLZhuYeViewController.h"
+#import "QLPingJiaListViewController.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end
@@ -36,16 +25,33 @@
     self.formManager[@"QLMerchantTagItem"] = @"QLMerchantTagCell";
     self.formManager[@"QLMerchantAddressPhoneItem"] = @"QLMerchantAddressPhoneCell";
     self.formManager[@"QLMerchantTitleItem"] = @"QLMerchantTitleCell";
+    self.formManager[@"QLMerchantProductsItem"] = @"QLMerchantProductsCell";
+    self.formManager[@"QLPingJiaItem"] = @"QLPingJiaCell";
+    self.formManager[@"QLMoreButtonItem"] = @"QLMoreButtonCell";
+    self.formManager[@"QLMerchantQinZiItem"] = @"QLMerchantQinZiCell";
+    self.formTable.height = WTScreenHeight-WT_NavBar_Height-54-WT_SafeArea_BOTTOM;
     [self getData];
+    [self createBottomView];
+}
+
+- (void)createBottomView {
+    _bottomView = [[QLBottomView alloc] initWithFrame:CGRectMake(0, WTScreenHeight-54-WT_SafeArea_BOTTOM, WTScreenWidth, 54+WT_SafeArea_BOTTOM)];
+    _bottomView.businessId = self.businessId;
+    _bottomView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_bottomView];
 }
 
 - (void)getData {
-    [WTLoadingView1 showLoadingInView:self.view];
+    self.bottomView.hidden = YES;
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLMerchantNetWorkingUtil getBusinessDetail:self.businessId successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
-        self.businessInfo = json[@"businessInfo"][0];
+        self.businessInfo = json[@"businessInfo"];
+        self.bottomView.hidden = NO;
+        self.bottomView.info = json[@"businessInfo"];
         [self initForm];
     } failHandler:^(NSString *message) {
+        self.bottomView.hidden = YES;
         [WTLoadingView1 hideAllLoadingForView:self.view];
         [WTLoadFailView showFailInView:self.view retryPress:^{
             [self getData];
@@ -98,6 +104,47 @@
     QLMerchantTitleItem *itTitleT = [[QLMerchantTitleItem alloc] init];
     [section0 addItem:itTitleT];
     
+    //商品
+    NSArray *goodsArray = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    if (goodsArray.count>0) {
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
+        QLMerchantProductsItem *itProduct = [[QLMerchantProductsItem alloc] init];
+        itProduct.productArray = goodsArray;
+        [section0 addItem:itProduct];
+    }
+    
+    //评价
+    NSArray *pingJiaArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
+    if (pingJiaArray.count>0) {
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
+        for (int i = 0; i < pingJiaArray.count; i++) {
+            QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
+            itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
+            if (i==0) {
+                itPingJia.pictureArray = pingJiaArray;
+            }
+            [section0 addItem:itPingJia];
+        }
+        QLMoreButtonItem *itMore = [[QLMoreButtonItem alloc] init];
+        itMore.titleText = @"查看更多评价";
+        itMore.selectionHandler = ^(id item) {
+            QLPingJiaListViewController *list = [[QLPingJiaListViewController alloc] init];
+            list.businessId = bself.businessId;
+            WTRootNavPush(list);
+        };
+        [section0 addItem:itMore];
+    }
+    
+    //周边亲子
+    NSArray *qinZiArrays = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    if (qinZiArrays.count>0) {
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
+        QLMerchantQinZiItem *itQinZi = [[QLMerchantQinZiItem alloc] init];
+        itQinZi.qinZiArray = qinZiArrays;
+        [section0 addItem:itQinZi];
+    }
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];

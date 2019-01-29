@@ -36,26 +36,17 @@
 - (void)initForm {
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
-
-    WTEmptyItem *itE1 = [[WTEmptyItem alloc] init];
-    itE1.cellHeight = 8;
-    itE1.bgColor = WT_Color_ViewBackGround;
-    [section0 addItem:itE1];
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
 
     for (int i = 0; i < 210; i++) {
         QLCareListItem *it = [[QLCareListItem alloc] init];
         [section0 addItem:it];
         
-        WTEmptyItem *itE = [[WTEmptyItem alloc] init];
-        itE.cellHeight = 8;
-        itE.bgColor = WT_Color_ViewBackGround;
-        [section0 addItem:itE];
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
     }
     
-    
     [sectionArray addObject:section0];
-    [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
-    
+    [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];    
     [self.formTable reloadData];
 }
 

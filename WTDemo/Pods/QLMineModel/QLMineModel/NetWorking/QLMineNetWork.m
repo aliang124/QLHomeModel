@@ -13,6 +13,8 @@
 #define QL_NetWorking_UpdateMemberInfo @"/account/update-member-info"
 //粉丝
 #define QL_NetWorking_Follow_Fans @"/follow/fans"
+//粉丝里关注用户
+#define QL_NetWorking_Follow_Follow @"/follow/follow"
 
 #import "QLMineNetWork.h"
 #import "WTBaseCore.h"
@@ -67,4 +69,15 @@
     }];
 }
 
++ (void)guanZhuUser:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_Follow_Follow Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
 @end

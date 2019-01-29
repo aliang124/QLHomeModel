@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WTLoadingView : UIView
 // 便利方法
 + (void)showLoadingInView:(UIView *)view;
++ (void)showLoadingInView:(UIView *)view top:(float)top;
 + (void)hideAllLoadingForView:(UIView *)view;
 @end
 

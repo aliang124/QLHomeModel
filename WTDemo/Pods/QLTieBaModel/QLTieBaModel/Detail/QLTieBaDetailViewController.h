@@ -8,4 +8,5 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 @interface QLTieBaDetailViewController : QLFormViewController
+@property (nonatomic,copy) NSString *subjectId;
 @end

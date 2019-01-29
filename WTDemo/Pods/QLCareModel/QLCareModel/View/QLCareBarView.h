@@ -7,5 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
+
 @interface QLCareBarView : UIButton
 @end

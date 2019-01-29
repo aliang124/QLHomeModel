@@ -9,5 +9,5 @@
 #import "WTFormViewController.h"
 
 @interface QLSubTieBaViewController : WTFormViewController
-
+@property (nonatomic,copy) NSDictionary *catogeryInfo;
 @end

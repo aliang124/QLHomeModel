@@ -89,6 +89,8 @@
     [self initForm];
     [self getAccountInfo];
     WTAddNotification(@"UpdateUserInfoSuccess", @selector(getAccountInfo));
+    WTAddNotification(QL_LoginSuccess_CompletionHandler, @selector(getAccountInfo));
+    
 }
 
 - (void)getAccountInfo {

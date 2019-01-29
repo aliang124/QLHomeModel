@@ -8,6 +8,11 @@
 #import "QLCareListCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
+#import "QLStarView.h"
+#import "QLListPictureView.h"
+#import "QLListDianZanCountView.h"
+#import "QLMerchantView.h"
 
 @implementation QLCareListItem
 - (id)init{
@@ -28,11 +33,20 @@
     UILabel *userNameLab;
     UILabel *dateLab;
 
-    UILabel *ageLab;
-    UILabel *tagLab;
-    UILabel *addrLab;
-    
-    UIImageView *lineImg;
+    //第二行
+    UILabel *tipLab;
+    //商家
+    QLMerchantView *merchantView;
+    //评分
+    UILabel *pingFenLab;
+    QLStarView *starView;
+    UILabel *scoreLab;
+    //内容区域
+    UILabel *descLab;
+    //图片区域
+    QLListPictureView *picView;
+    //点赞数量
+    QLListDianZanCountView *zanView;
 }
 @end
 
@@ -68,29 +82,42 @@
     dateLab.textColor = QL_DateTextColor_Gray;
     [bgView addSubview:dateLab];
 
-//
-//    ageLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImage.right+12, titleLab.bottom+16, 34, 14)];
-//    ageLab.backgroundColor = QL_NavBar_BgColor_Yellow;
-//    ageLab.font = WTFontSys(8);
-//    ageLab.textAlignment = NSTextAlignmentCenter;
-//    ageLab.textColor = QL_UserName_TitleColor_Black;
-//    [self.contentView addSubview:ageLab];
-//
-//    tagLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImage.right+12, ageLab.bottom+26, 28, 14)];
-//    tagLab.backgroundColor = QL_TagColor_Green;
-//    tagLab.textColor = QL_TagTextColor_Green;
-//    tagLab.font = WTFontSys(10);
-//    tagLab.textAlignment = NSTextAlignmentCenter;
-//    [self.contentView addSubview:tagLab];
-//
-//    addrLab = [[UILabel alloc] initWithFrame:CGRectMake(tagLab.right+12, tagLab.top, WTScreenWidth-tagLab.right-12-12, 14)];
-//    addrLab.textColor = QL_UserName_TitleColor_Black;
-//    addrLab.font = WTFontSys(10);
-//    [self.contentView addSubview:addrLab];
-//
-//    lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(iconImage.right+12, 108-WT_Line_Height, WTScreenWidth-iconImage.right-12, WT_Line_Height)];
-//    lineImg.backgroundColor = WT_Color_Line;
-//    [self.contentView addSubview:lineImg];
+    //第二行
+    tipLab = [[UILabel alloc] initWithFrame:CGRectMake(12, userIcon.bottom+12, bgView.width-12-12, 9)];
+    tipLab.font = WTFontSys(10);
+    tipLab.textColor = QL_DescColor_Gray;
+    [bgView addSubview:tipLab];
+    //商家
+    merchantView = [[QLMerchantView alloc] initWithFrame:CGRectMake(0, tipLab.bottom+8, bgView.width, 76)];
+    [bgView addSubview:merchantView];
+    //评分
+    pingFenLab = [[UILabel alloc] initWithFrame:CGRectMake(12, tipLab.bottom+8, 33, 9)];
+    pingFenLab.text = @"评分：";
+    pingFenLab.font = WTFontSys(10);
+    pingFenLab.textColor = QL_UserName_TitleColor_Black;
+    [bgView addSubview:pingFenLab];
+
+    starView = [[QLStarView alloc] initWithOrgPoint:CGPointMake(pingFenLab.right, pingFenLab.top-2)];
+    [bgView addSubview:starView];
+    
+    scoreLab = [[UILabel alloc] initWithFrame:CGRectMake(starView.right+11, tipLab.bottom+8, 33, 9)];
+    scoreLab.font = WTFontSys(10);
+    scoreLab.textColor = QL_UserName_TitleColor_Black;
+    [bgView addSubview:scoreLab];
+
+    //描述区域
+    descLab = [[UILabel alloc] initWithFrame:CGRectMake(12, pingFenLab.bottom+11, bgView.width-12-21, 9)];
+    descLab.numberOfLines = 0;
+    descLab.font = WTFontSys(12);
+    descLab.textColor = QL_UserName_TitleColor_Black;
+    [bgView addSubview:descLab];
+
+    //图片区域
+    picView = [[QLListPictureView alloc] initWithFrame:CGRectMake(12, descLab.bottom+8, bgView.width-12-12, 88)];
+    [bgView addSubview:picView];
+    //点赞数量区域
+    zanView = [[QLListDianZanCountView alloc] initWithFrame:CGRectMake(0, picView.bottom+7, bgView.width, 10)];
+    [bgView addSubview:zanView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -101,15 +128,29 @@
     [super cellWillAppear];
     userNameLab.text = @"用户A";
     dateLab.text = @"11月22日 12:22";
-//    tagLab.text = @"西餐";
-//    [tagLab sizeToFit];
-//    tagLab.width = tagLab.width+8;
-//    addrLab.frame = CGRectMake(tagLab.right+12, tagLab.top, WTScreenWidth-tagLab.right-12-12, 14);
-//    addrLab.text = @"西城区西直门外大街1号购物中心B1...";
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
+    [userIcon setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
+    //第二行
+    tipLab.text = @"获得新用户的评价";
+    float top = tipLab.bottom;
+    //商家
+    merchantView.top = tipLab.bottom+8;
+    top = top + 84;
+    //评分
+    pingFenLab.top = top+8;
+    starView.top = pingFenLab.top-1.5;
+    scoreLab.top = pingFenLab.top;
+    
+    starView.starCount = 3;
+    scoreLab.text = @"3.7";
+    //desc
+    descLab.top = pingFenLab.bottom+11;
+    descLab.text = @"店里很卫生，安全设施很好，吃的很放心味道也挺好，菜都很精致。";
+    [descLab sizeToFit];
+    //图片
+    picView.top = descLab.bottom+8;
+    zanView.top = picView.bottom+7;
+    
+    bgView.height = zanView.bottom+15;
+    self.item.cellHeight = bgView.height;
 }
 @end

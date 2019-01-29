@@ -41,6 +41,15 @@
     return self;
 }
 #pragma mark - 便利方法
++ (void)showEmptyInView:(UIView *)view top:(float)top image:(UIImage *)img
+{
+    //隐藏所有加载中视图
+    [WTLoadingView hideAllLoadingForView:view];
+    [WTLoadingView1 hideAllLoadingForView:view];
+    //显示空视图
+    WTEmptyView *loadingView = [[WTEmptyView alloc] initWithFrame:CGRectMake(0, top, view.frame.size.width, view.frame.size.height) img:img];
+    [loadingView showInView:view];
+}
 
 + (void)showEmptyInView:(UIView *)view image:(UIImage *)img
 {

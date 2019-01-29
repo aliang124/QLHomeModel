@@ -11,6 +11,12 @@
 #define QL_NetWorking_BusinessIndex @"/business/index"
 //商家详情
 #define QL_NetWorking_BusinessDetail @"/business/detail"
+//商家评价列表
+#define QL_NetWorking_AllPingJia @"/business/comments"
+//评价详情
+#define QL_NetWorking_PingJiaDetail @"/business/comments-detail"
+//用户主页
+#define QL_NetWorking_ZhuYe @"/member/index"
 
 #import "QLMerchantNetWorkingUtil.h"
 #import "WTBaseCore.h"
@@ -54,4 +60,41 @@
         }
     }];
 }
+
++ (void)getAllPingJia:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_AllPingJia Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
+
++ (void)getPingJiaDetail:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_PingJiaDetail Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
+
++ (void)getZhuYeInfo:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_ZhuYe Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
+
 @end

@@ -8,5 +8,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 @interface QLFunsViewController : QLFormViewController
-
+@property (nonatomic,strong) NSMutableArray *listArray;
+@property (nonatomic,assign) int pageIndex;
+@property (nonatomic,assign) int totalPage;
 @end

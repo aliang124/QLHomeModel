@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (id)initWithFrame:(CGRect)frame img:(UIImage *)img;
 // 便利方法
 + (void)showEmptyInView:(UIView *)view image:(UIImage *)img;
++ (void)showEmptyInView:(UIView *)view top:(float)top image:(UIImage *)img;
 + (void)hideAllEmptyViewForView:(UIView *)view;
 @end
 

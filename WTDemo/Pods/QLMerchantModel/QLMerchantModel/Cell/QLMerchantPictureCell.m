@@ -13,7 +13,7 @@
 @implementation QLMerchantPictureItem
 - (id)init{
     if (self = [super init]) {
-        self.cellHeight = 120 * (WTScreenWidth/360);
+        self.cellHeight = QL_MULPITLE*120;
         self.hasBottomLine = NO;
     }
     return self;
@@ -32,7 +32,7 @@
 - (void)cellDidLoad
 {
     [super cellDidLoad];
-    iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WTScreenWidth, 120)];
+    iconImage = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 360, 120)];
     iconImage.contentMode = UIViewContentModeScaleAspectFill;
     iconImage.clipsToBounds = YES;
     [self.contentView addSubview:iconImage];
@@ -44,7 +44,6 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    iconImage.height = self.item.cellHeight;
     [iconImage setWebImageWithUrl:[WTUtil strRelay:self.item.info[@"logo"]] placeHolder:nil];
 }
 

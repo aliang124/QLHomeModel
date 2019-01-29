@@ -1,0 +1,1 @@
+../../../QLMerchantModel/QLMerchantModel/Cell/QLPingJiaHeadBannerCell.h

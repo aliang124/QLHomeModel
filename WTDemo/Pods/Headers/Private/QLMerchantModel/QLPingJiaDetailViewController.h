@@ -1,0 +1,1 @@
+../../../QLMerchantModel/QLMerchantModel/Controller/QLPingJiaDetailViewController.h

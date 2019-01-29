@@ -24,8 +24,8 @@
         [self setBackgroundImage:[WTUtil createImageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         [self setBackgroundImage:[WTUtil createImageFromColor:WT_Color_ViewBackGround] forState:UIControlStateHighlighted];
 
-        iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(20, 15, 20, 14)];
-        iconImg.backgroundColor = [UIColor redColor];
+        iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(19, 12, 20, 20)];
+        [iconImg setImage:[UIImage imageNamed:@"myGuanZhu"]];
         [self addSubview:iconImg];
         
         titleLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImg.right+8, 15, 48, 14)];

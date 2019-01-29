@@ -7,6 +7,7 @@
 //
 #import "QLUserIconCel.h"
 #import "WTBaseCore.h"
+#import "QLBusiness.h"
 #import "WTImagePickerUtil.h"
 #import "QLMineNetWork.h"
 #import "UIImageView+WebImage.h"
@@ -79,7 +80,33 @@
     [[WTImagePickerUtil shareInstance] setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
         if (photos.count>0) {
             [weakSelf.iconImg setImage:photos[0]];
+            [weakSelf uploadImage:photos[0]];
         }
+    }];
+}
+
+- (void)uploadImage:(UIImage *)img {
+    [QLMBProgressHUDUtil showActivityMessageInWindow:@"正在加载"];
+    [QLNetWorkingUtil uploadPic:QL_Net_Host path:@"/image/index" param:nil files:[NSArray arrayWithObject:[NSDictionary dictionaryWithObject:img forKey:@"image"]] success:^(id json) {
+        NSArray *ar = (NSArray *)json;
+        if ([ar isKindOfClass:[NSArray class]] && ar.count>0) {
+            NSMutableDictionary *info = [NSMutableDictionary dictionary];
+            [info setObject:ar[0] forKey:@"image"];
+            [QLMineNetWork updateUserInfo:info successHandler:^(id json) {
+                [QLMBProgressHUDUtil hideHUD];
+                [WTToast makeText:@"更新成功"];
+                WTPostNotification(@"UpdateUserInfoSuccess", nil);
+            } failHandler:^(NSString *message) {
+                [QLMBProgressHUDUtil hideHUD];
+                [WTToast makeText:message];
+            }];
+        } else {
+            [QLMBProgressHUDUtil hideHUD];
+            [WTToast makeText:@"更新失败"];
+        }
+    } fail:^(NSString *message) {
+        [QLMBProgressHUDUtil hideHUD];
+        [WTToast makeText:message];
     }];
 }
 @end

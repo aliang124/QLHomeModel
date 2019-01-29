@@ -48,6 +48,16 @@
     }
 }
 #pragma mark - 便利方法
++ (void)showFailInView:(UIView *)view top:(float)top retryPress:(void (^)(void))retry
+{
+    //隐藏所有的加载中view
+    [WTLoadingView hideAllLoadingForView:view];
+    [WTLoadingView1 hideAllLoadingForView:view];
+    //显示加载失败View
+    WTLoadFailView *loadingView = [[WTLoadFailView alloc] initWithFrame:CGRectMake(0, top, view.frame.size.width, view.frame.size.height)];
+    loadingView.retryPress = retry;
+    [loadingView showInView:view];
+}
 
 + (void)showFailInView:(UIView *)view retryPress:(void (^)(void))retry
 {

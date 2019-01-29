@@ -24,4 +24,8 @@
  ** info:
  */
 + (void)getFlowerFuns:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
+/*  粉丝里关注用户
+ ** info:
+ */
++ (void)guanZhuUser:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
 @end

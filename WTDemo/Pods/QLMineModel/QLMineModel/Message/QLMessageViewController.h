@@ -7,6 +7,8 @@
 //
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
-@interface QLMessageViewController : QLFormViewController
+#import "WTTabPagerController.h"
+
+@interface QLMessageViewController : WTTabPagerController
 
 @end

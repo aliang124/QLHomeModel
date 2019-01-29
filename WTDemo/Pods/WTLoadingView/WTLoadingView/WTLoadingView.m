@@ -59,6 +59,14 @@ static NSArray *s_refreshingImages = nil;
 }
 
 #pragma mark - 便利方法
++ (void)showLoadingInView:(UIView *)view top:(float)top
+{
+    //隐藏所有的加载失败视图
+    [WTLoadFailView hideAllFailForView:view];
+    //显示加载中视图
+    WTLoadingView *loadingView = [[WTLoadingView alloc] initWithFrame:CGRectMake(0, top, view.frame.size.width, view.frame.size.height)];
+    [loadingView showInView:view];
+}
 
 + (void)showLoadingInView:(UIView *)view
 {

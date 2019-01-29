@@ -8,6 +8,7 @@
 #import "QLTieBaCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLTieBaItem
 - (id)init{
@@ -98,15 +99,12 @@
     float height = width * 0.92;
     
     netImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(12, descLab.bottom+7, width, height)];
-    netImg1.backgroundColor = [UIColor redColor];
     [bgView addSubview:netImg1];
 
     netImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(netImg1.right+10, netImg1.top, width, height)];
-    netImg2.backgroundColor = [UIColor redColor];
     [bgView addSubview:netImg2];
 
     netImg3 = [[UIImageView alloc] initWithFrame:CGRectMake(netImg2.right+10, netImg1.top, width, height)];
-    netImg3.backgroundColor = [UIColor redColor];
     [bgView addSubview:netImg3];
     //底部tagLab
     tagLab = [[UILabel alloc] initWithFrame:CGRectMake(12, 0, 10, 14)];
@@ -124,7 +122,8 @@
     
     liuYanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [liuYanIcon setImage:[UIImage imageNamed:@"liuyan"]];
-    
+    [bgView addSubview:liuYanIcon];
+
     //浏览数
     liulanCountLab = [[UILabel alloc] initWithFrame:CGRectMake(bgView.width-12, netImg1.bottom+9, 9, 7)];
     liulanCountLab.font = WTFontSys(10);
@@ -134,8 +133,6 @@
     liulanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [liulanIcon setImage:[UIImage imageNamed:@"liulan"]];
     [bgView addSubview:liulanIcon];
-    
-    [bgView addSubview:liuYanIcon];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -145,11 +142,13 @@
 {
     [super cellWillAppear];
     self.backgroundColor = WT_Color_ViewBackGround;
-    self.contentView.backgroundColor = WT_Color_ViewBackGround;
     //
-    userNameLab.text = @"用户A";
-    titleLab.text = @"爸妈做到这5点，宝宝将来不愁大长腿！";
-    descLab.text = @"青春期是长高的一个黄金期，爸妈都知道，小南就略过不提。重点说说爸妈可能忽略的“3岁前”吧。先说说宝宝身高增长的";
+    userNameLab.text = [WTUtil strRelay:self.item.info[@"memberName"]];
+    titleLab.text = [WTUtil strRelay:self.item.info[@"name"]];
+    descLab.text = [WTUtil strRelay:self.item.info[@"description"]];
+    [netImg1 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg" placeHolder:nil];
+    [netImg2 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg" placeHolder:nil];
+    [netImg3 setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg" placeHolder:nil];
 
     //标题自适应高度缓存
     if (self.item.titleTextHeight==5) {

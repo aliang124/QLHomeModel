@@ -7,5 +7,7 @@
 //
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
-@interface QLGuanZhuViewController : QLFormViewController
+#import "WTTabPagerController.h"
+
+@interface QLGuanZhuViewController : WTTabPagerController
 @end

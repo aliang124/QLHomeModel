@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 便利方法
 + (void)showFailInView:(UIView *)view retryPress:(void (^)(void))retry;
++ (void)showFailInView:(UIView *)view top:(float)top retryPress:(void (^)(void))retry;
 + (void)hideAllFailForView:(UIView *)view;
 
 @end
