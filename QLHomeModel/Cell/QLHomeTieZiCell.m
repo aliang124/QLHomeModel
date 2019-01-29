@@ -129,7 +129,7 @@
     self.contentView.height = netImg1.bottom+32;
     //
     tagLab.top = netImg1.bottom+6;
-    tagLab.text = @"吃喝玩乐";
+    tagLab.text = @"吃喝玩乐";//[WTUtil strRelay:self.item.userInfo[@"label"]];
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
     tagLab.height = tagLab.height + 4;
