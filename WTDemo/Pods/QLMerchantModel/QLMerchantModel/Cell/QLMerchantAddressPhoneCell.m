@@ -22,7 +22,7 @@
 @interface QLMerchantAddressPhoneCell()
 {
     UILabel *addressLab;
-    UIImageView *phoneImg;
+    UIButton *phoneImg;
 }
 @end
 
@@ -39,8 +39,9 @@
     addressLab.textColor = QL_DescColor_Gray;
     [self.contentView addSubview:addressLab];
     
-    phoneImg = [[UIImageView alloc] initWithFrame:CGRectMake(addressLab.right+39, 0, 24, 24)];
-    [phoneImg setImage:[UIImage imageNamed:@"phoneImg"]];
+    phoneImg = [[UIButton alloc] initWithFrame:CGRectMake(addressLab.right+39, 0, 24, 24)];
+    [phoneImg setImage:[UIImage imageNamed:@"phoneImg"] forState:UIControlStateNormal];
+    [phoneImg addTarget:self action:@selector(callPhone) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:phoneImg];
 }
 
@@ -50,11 +51,16 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    addressLab.text = @"通州区九棵树西路92号北泡集团有限公司院内2幢02（东郎影视基地胡桃里对面)";
+    addressLab.text = [WTUtil strRelay:self.item.info[@"address"]];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
+- (void)callPhone {
+    NSString *phone = [WTUtil strRelay:self.item.info[@"telephone"]];
+    if (phone.length==0) {
+        phone = [WTUtil strRelay:self.item.info[@"phone"]];
+    }
+    if (phone.length>0) {
+        [WTUtil call:phone];
+    }
 }
 @end

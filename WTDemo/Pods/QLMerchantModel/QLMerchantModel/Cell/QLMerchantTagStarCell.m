@@ -65,23 +65,18 @@
     [bgView addSubview:tagLab];
     
     starImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 3.5, 9, 9)];
-    [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
     [starView addSubview:starImg1];
 
     starImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(starImg1.right+4, 3.5, 9, 9)];
-    [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
     [starView addSubview:starImg2];
 
     starImg3 = [[UIImageView alloc] initWithFrame:CGRectMake(starImg2.right+4, 3.5, 9, 9)];
-    [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
     [starView addSubview:starImg3];
 
     starImg4 = [[UIImageView alloc] initWithFrame:CGRectMake(starImg3.right+4, 3.5, 9, 9)];
-    [starImg4 setImage:[UIImage imageNamed:@"starYellow"]];
     [starView addSubview:starImg4];
 
     starImg5 = [[UIImageView alloc] initWithFrame:CGRectMake(starImg4.right+4, 3.5, 9, 9)];
-    [starImg5 setImage:[UIImage imageNamed:@"starYellow"]];
     [starView addSubview:starImg5];
 }
 
@@ -91,7 +86,7 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    tagLab.text = @"西餐";
+    tagLab.text = [WTUtil strRelay:self.item.info[@"label"]];
     [tagLab sizeToFit];
     tagLab.top = (16-tagLab.height)/2;
     
@@ -109,6 +104,44 @@
     starImg3.left = starImg2.right+4;
     starImg4.left = starImg3.right+4;
     starImg5.left = starImg4.right+4;
+    
+    int starCount = [[WTUtil strRelay:self.item.info[@"score"]] intValue];
+    [starImg1 setImage:[UIImage imageNamed:@"starGray"]];
+    [starImg2 setImage:[UIImage imageNamed:@"starGray"]];
+    [starImg3 setImage:[UIImage imageNamed:@"starGray"]];
+    [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
+    [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
+    if (starCount==1) {
+        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg2 setImage:[UIImage imageNamed:@"starGray"]];
+        [starImg3 setImage:[UIImage imageNamed:@"starGray"]];
+        [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
+        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
+    } else if (starCount==2) {
+        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg3 setImage:[UIImage imageNamed:@"starGray"]];
+        [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
+        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
+    } else if (starCount==3) {
+        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
+        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
+    } else if (starCount==4) {
+        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg4 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
+    } else if (starCount==5) {
+        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg4 setImage:[UIImage imageNamed:@"starYellow"]];
+        [starImg5 setImage:[UIImage imageNamed:@"starYellow"]];
+    }
 }
 
 - (void)layoutSubviews

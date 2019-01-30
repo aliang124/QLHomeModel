@@ -9,8 +9,11 @@
 #import "QLBusiness.h"
 @interface QLZhuYeHeadItem : RETableViewItem
 @property (nonatomic,copy) id info;
+@property (nonatomic,copy) NSString *isFollow;
+@property (nonatomic,copy) NSString *followNum;
+@property (nonatomic,copy) NSString *fansNum;
 @end
 
 @interface QLZhuYeHeadCell : RETableViewCell
-@property (strong, readwrite, nonatomic) QLZhuYeHeadCell *item;
+@property (strong, readwrite, nonatomic) QLZhuYeHeadItem *item;
 @end

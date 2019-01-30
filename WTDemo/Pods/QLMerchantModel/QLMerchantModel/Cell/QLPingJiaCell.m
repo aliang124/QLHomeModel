@@ -58,7 +58,7 @@
 {
     [super cellWillAppear];
     [self setScoreAreaValue];
-    descLab.text = [WTUtil strRelay:self.item.descText];
+    descLab.text = [WTUtil strRelay:self.item.info[@"comments"]];
     [descLab sizeToFit];
     [self createPictures];
     
@@ -74,16 +74,16 @@
 }
 
 - (void)setBottomView {
-    //点赞数
-    liuYanCountLab.text = [WTUtil strRelay:self.item.dianZanCount];
+    //评论数
+    liuYanCountLab.text = [WTUtil strRelay:self.item.info[@"commentsNumber"]];
     [liuYanCountLab sizeToFit];
     liuYanCountLab.top = (bottomView.height-liuYanCountLab.height)/2;
     liuYanCountLab.left = WTScreenWidth-(16*QL_MULPITLE)-liuYanCountLab.width;
     
     liuYanIcon.top = 9*QL_MULPITLE;
     liuYanIcon.left = liuYanCountLab.left-(15*QL_MULPITLE);
-    //评论数
-    liulanCountLab.text = [WTUtil strRelay:self.item.viewCount];
+    //点赞数
+    liulanCountLab.text = [WTUtil strRelay:self.item.info[@"praiseNumber"]];
     liulanCountLab.top = 9*QL_MULPITLE;
     [liulanCountLab sizeToFit];
     liulanCountLab.left = liuYanIcon.left-(16*QL_MULPITLE)-liulanCountLab.width;
@@ -104,7 +104,8 @@
     
     liuYanIcon = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 10, 10)];
     [liuYanIcon setImage:[UIImage imageNamed:@"liuyan"]];
-    
+    [bottomView addSubview:liuYanIcon];
+
     //浏览数
     liulanCountLab = [[UILabel alloc] initWithFrame:CGRectMakes(360-12, 9, 9, 7)];
     liulanCountLab.font = WTFontSys(10*QL_MULPITLE);
@@ -113,9 +114,7 @@
     
     liulanIcon = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 10, 10)];
     [liulanIcon setImage:[UIImage imageNamed:@"liulan"]];
-    [bottomView addSubview:liulanIcon];
-    
-    [bottomView addSubview:liuYanIcon];
+    [bottomView addSubview:liulanIcon];    
 }
 
 - (void)createPictures {
@@ -169,7 +168,7 @@
 }
 
 - (void)setScoreAreaValue {
-    double starCount = [[WTUtil strRelay:self.item.scoreText] doubleValue];
+    double starCount = [[WTUtil strRelay:self.item.info[@"score"]] doubleValue];
     starView.starCount = (int)starCount;
     scoreLab.text = [NSString stringWithFormat:@"%0.1f",starCount];
 }

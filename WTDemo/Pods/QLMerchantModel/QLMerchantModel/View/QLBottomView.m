@@ -55,7 +55,7 @@
 
 - (void)goToZhuYe {
     QLZhuYeViewController *zhu = [[QLZhuYeViewController alloc] init];
-    zhu.memberId = self.info[@"id"];
+    zhu.memberId = self.businessId;//self.info[@"id"];
     WTRootNavPush(zhu);
 }
 

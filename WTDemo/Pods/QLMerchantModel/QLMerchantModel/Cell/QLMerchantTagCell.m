@@ -40,8 +40,8 @@
 {
     [super cellWillAppear];
     [self.contentView removeAllSubviews];
-    
-    NSArray *ar = [NSArray arrayWithObjects:@"西餐",@"红酒",@"聚会", nil];
+    NSString *labelString = [WTUtil strRelay:self.item.info[@"label"]];
+    NSArray *ar = [NSArray arrayWithObjects:labelString, nil];
     float offsetX = 66;
     for (int i = 0; i < ar.count; i++) {
         NSString *tagStr = ar[i];

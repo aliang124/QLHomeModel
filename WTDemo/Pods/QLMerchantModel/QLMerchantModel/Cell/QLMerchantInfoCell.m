@@ -61,7 +61,7 @@
     
     addressLab.text = [WTUtil strRelay:self.item.info[@"address"]];
     [addressLab sizeToFit];    
-    ageLab.text = @"0-3岁";
+    ageLab.text = [WTUtil strRelay:self.item.info[@"ageGroup"]];
     [ageLab sizeToFit];
     
     float totalW = addressLab.width+ageLab.width+16;

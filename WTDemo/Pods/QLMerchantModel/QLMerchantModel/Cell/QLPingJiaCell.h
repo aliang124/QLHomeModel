@@ -9,10 +9,6 @@
 #import "QLBusiness.h"
 @interface QLPingJiaItem : RETableViewItem
 @property (nonatomic,copy) id info;
-@property (nonatomic,copy) NSString *scoreText;//分数
-@property (nonatomic,copy) NSString *descText;//评价
-@property (nonatomic,copy) NSString *viewCount;//评论数
-@property (nonatomic,copy) NSString *dianZanCount;//点赞数
 @property (nonatomic,copy) NSArray *pictureArray;//图片
 @end
 

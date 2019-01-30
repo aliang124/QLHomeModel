@@ -163,10 +163,7 @@
         [section0 addItem:it];
     }
     
-    WTEmptyItem *itE = [[WTEmptyItem alloc] init];
-    itE.cellHeight = 8;
-    itE.bgColor = WT_Color_ViewBackGround;
-    [section0 addItem:itE];
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

@@ -8,6 +8,7 @@
 #import "QLTieBaUserInfoCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLTieBaUserInfoItem
 - (id)init{
@@ -42,7 +43,6 @@
     iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(16, 15, 20, 20)];
     iconImg.layer.cornerRadius = 10;
     iconImg.layer.masksToBounds = YES;
-    iconImg.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:iconImg];
     
     userNameLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImg.right+10, 19, 0, 12)];
@@ -77,25 +77,21 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    userNameLab.text = @"用户A";
+    [iconImg setWebImageWithUrl:[WTUtil strRelay:self.item.info[@"memberImage"]] placeHolder:[WTUtil createImageFromColor:QL_DateTextColor_Gray]];
+    userNameLab.text = [WTUtil strRelay:self.item.info[@"memberName"]];
     [userNameLab sizeToFit];
     userNameLab.top = (50-userNameLab.height)/2;
     //留言数
-    liuYanCountLab.text = @"1224";
+    liuYanCountLab.text = [WTUtil strRelay:self.item.info[@"commentsNumber"]];
     [liuYanCountLab sizeToFit];
     liuYanCountLab.top = (50-liuYanCountLab.height)/2;
     liuYanCountLab.left = WTScreenWidth-16-liuYanCountLab.width;
     liuYanIcon.left = liuYanCountLab.left-5-10;
     //浏览数
-    liulanCountLab.text = @"8180";
+    liulanCountLab.text = [WTUtil strRelay:self.item.info[@"browseNumber"]];
     [liulanCountLab sizeToFit];
     liulanCountLab.top = (50-liulanCountLab.height)/2;
     liulanCountLab.left = liuYanIcon.left-16-liulanCountLab.width;
     liulanIcon.left = liulanCountLab.left-5-10;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
 }
 @end

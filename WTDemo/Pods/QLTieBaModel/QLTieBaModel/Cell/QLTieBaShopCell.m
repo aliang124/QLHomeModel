@@ -87,16 +87,16 @@
 {
     [super cellWillAppear];
     nameLab.text = [WTUtil strRelay:self.item.shopNameText];
-    moneyLab.text = @"¥90/人";
+    moneyLab.text = [WTUtil strRelay:self.item.info[@"consume"]];
     //下面的布局
     tagLab.top = moneyLab.bottom+6;
-    tagLab.text = @"西餐";
+    tagLab.text = [WTUtil strRelay:self.item.info[@"label"]];
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
     tagLab.height = tagLab.height + 4;
     //
     addressLab.left = tagLab.right+5;
-    addressLab.text = @"宁国路商业区";
+    addressLab.text = [WTUtil strRelay:self.item.info[@"businessAddress"]];
     [addressLab sizeToFit];
     addressLab.height = tagLab.height;
     addressLab.top = tagLab.top;

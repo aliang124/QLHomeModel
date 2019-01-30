@@ -59,7 +59,7 @@
         [contentScrollView addSubview:productBtn];
 
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 120, 92)];
-        [imageV setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547976453468&di=0730fb64aadc80b0f2490a430f51aebb&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201105%2F31%2F20110531094303_d5JZB.jpg" placeHolder:nil];
+        [imageV setWebImageWithUrl:[WTUtil strRelay:dic[@"image"]] placeHolder:nil];
         [productBtn addSubview:imageV];
         
         UIView *priceBgView = [[UIView alloc] initWithFrame:CGRectMakes(0, 92-22, 120, 22)];
@@ -70,14 +70,14 @@
         UILabel *priceLabel = [[UILabel alloc] initWithFrame:CGRectMakes(0, 0, 120-6, 22)];
         priceLabel.font = [UIFont systemFontOfSize:12*QL_MULPITLE];
         priceLabel.textColor = [UIColor whiteColor];
-        priceLabel.text = @"$12.0";
+        priceLabel.text = [NSString stringWithFormat:@"$%@",[WTUtil strRelay:dic[@"price"]]];
         priceLabel.textAlignment = NSTextAlignmentRight;
         [priceBgView addSubview:priceLabel];
 
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMakes(0, 99, 120, 11)];
         nameLabel.font = [UIFont systemFontOfSize:12*QL_MULPITLE];
         nameLabel.textColor = QL_DescColor_Gray;
-        nameLabel.text = @"儿童海鲜炒饭";
+        nameLabel.text = [WTUtil strRelay:dic[@"name"]];
         nameLabel.textAlignment = NSTextAlignmentCenter;
         [productBtn addSubview:nameLabel];
     }

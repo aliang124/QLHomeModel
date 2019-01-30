@@ -12,12 +12,12 @@
 @implementation QLTieBaTitleItem
 - (id)init{
     if (self = [super init]) {
-        self.cellHeight = 0.01;
+        self.cellHeight = 5;
         self.titleFont = WTFontBoldSys(16);
         self.titleColor = QL_UserName_TitleColor_Black;
         self.hasBottomLine = NO;
         self.rightOffset = 40;
-        self.titleTextHeight = -1;
+        self.titleTextHeight = 5;
     }
     return self;
 }
@@ -52,8 +52,8 @@
     titleLab.textColor = self.item.titleColor;
     titleLab.text = [WTUtil strRelay:self.item.titleText];
     
-    float H = 0.01;
-    if (self.item.titleTextHeight==-1) {
+    float H = 5;
+    if (self.item.titleTextHeight==5) {
         [titleLab sizeToFit];
         H = titleLab.height;
     }

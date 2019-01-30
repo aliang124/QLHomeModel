@@ -16,6 +16,8 @@
 #import "QLPingJiaDescCell.h"
 #import "QLPingJiaDianZanCell.h"
 #import "QLPingJiaHuiFuCell.h"
+#import <MJRefresh.h>
+
 @interface QLPingJiaDetailViewController ()
 @property (nonatomic,copy) NSDictionary *commentsData;
 @end
@@ -32,21 +34,27 @@
     self.formManager[@"QLPingJiaDescItem"] = @"QLPingJiaDescCell";
     self.formManager[@"QLPingJiaDianZanItem"] = @"QLPingJiaDianZanCell";
     self.formManager[@"QLPingJiaHuiFuItem"] = @"QLPingJiaHuiFuCell";
+    
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [self getData];
+    self.formTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self getData];
+    }];
 }
 
 - (void)getData {
-    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:[WTUtil strRelay:self.businessId] forKey:@"businessId"];
     [param setObject:[WTUtil strRelay:self.commentId] forKey:@"commentsId"];
     [QLMerchantNetWorkingUtil getPingJiaDetail:param successHandler:^(id json) {
+        [self.formTable.mj_header endRefreshing];
         [WTLoadingView1 hideAllLoadingForView:self.view];
         self.commentsData = json[@"commentsData"];
         [self initForm];
     } failHandler:^(NSString *message) {
+        [self.formTable.mj_header endRefreshing];
         [WTLoadingView1 hideAllLoadingForView:self.view];
-        [WTLoadFailView showFailInView:self.view retryPress:^{
+        [WTLoadFailView showFailInView:self.view top:WT_NavBar_Height retryPress:^{
             [self getData];
         }];
     }];

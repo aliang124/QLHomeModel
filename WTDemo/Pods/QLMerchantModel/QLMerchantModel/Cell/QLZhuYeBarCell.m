@@ -20,6 +20,7 @@
 
 @interface QLZhuYeBarCell()
 {
+    UIImageView *guanZhuImg;
 }
 @end
 
@@ -38,9 +39,8 @@
     [btn1 setBackgroundImage:[WTUtil createImageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
     [yingyin addSubview:btn1];
 
-    UIImageView *iconImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 13.5, 21, 21)];
-    [iconImg1 setImage:[UIImage imageNamed:@"guanzhuHeart"]];
-    [btn1 addSubview:iconImg1];
+    guanZhuImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 13.5, 21, 21)];
+    [btn1 addSubview:guanZhuImg];
     
     UILabel *titleTextLab1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 13)];
     titleTextLab1.text = @"关注TA";
@@ -50,8 +50,8 @@
     [titleTextLab1 sizeToFit];
     
     float totalW1 = titleTextLab1.width+21+11;
-    iconImg1.left = (btn1.width-totalW1)/2;
-    titleTextLab1.left = iconImg1.right+11;
+    guanZhuImg.left = (btn1.width-totalW1)/2;
+    titleTextLab1.left = guanZhuImg.right+11;
     titleTextLab1.top = (btn1.height-titleTextLab1.height)/2;
     
     UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(btn1.width, 0, yingyin.width/2, 48)];
@@ -81,6 +81,10 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
+    [guanZhuImg setImage:[UIImage imageNamed:@"guanzhuHeart"]];
+    if ([self.item.isFollow boolValue]) {
+        [guanZhuImg setImage:[UIImage imageNamed:@"guanzhuHeart_h"]];
+    }
 }
 
 @end

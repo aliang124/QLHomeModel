@@ -9,6 +9,9 @@
 #import "QLBusiness.h"
 @interface QLZhuYeBarItem : RETableViewItem
 @property (nonatomic,copy) id info;
+@property (nonatomic,copy) NSString *isFollow;
+@property (nonatomic,copy) NSString *followNum;
+@property (nonatomic,copy) NSString *fansNum;
 @end
 
 @interface QLZhuYeBarCell : RETableViewCell

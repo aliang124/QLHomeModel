@@ -55,7 +55,10 @@
 {
     [super cellWillAppear];
     tagLab.text = @"营业中";
-    timeLab.text = @"周一至周六  09:00~20:00";
+    NSString *startDate = [WTUtil strRelay:self.item.info[@"startDate"]];
+    NSString *overDate = [WTUtil strRelay:self.item.info[@"overDate"]];
+    NSString *dateString = [NSString stringWithFormat:@"%@至于%@",startDate,overDate];
+    timeLab.text = dateString;
 }
 
 - (void)layoutSubviews
