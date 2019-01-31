@@ -110,7 +110,7 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    titleLab.text = [WTUtil strRelay:self.item.userInfo[@"title"]];
+    titleLab.text = [WTUtil strRelay:self.item.userInfo[@"name"]];
     descLab.text = [WTUtil strRelay:self.item.userInfo[@"description"]];
     //标题自适应高度缓存
     if (self.item.titleTextHeight==5) {
@@ -129,12 +129,12 @@
     self.contentView.height = netImg1.bottom+32;
     //
     tagLab.top = netImg1.bottom+6;
-    tagLab.text = @"吃喝玩乐";//[WTUtil strRelay:self.item.userInfo[@"label"]];
+    tagLab.text = [WTUtil strRelay:self.item.userInfo[@"plateName"]];
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
     tagLab.height = tagLab.height + 4;
     //留言数
-    liuYanCountLab.text = @"1212";
+    liuYanCountLab.text = [WTUtil strRelay:self.item.userInfo[@"commentsNumber"]];
     liuYanCountLab.top = netImg1.bottom+9;
     [liuYanCountLab sizeToFit];
     liuYanCountLab.left = WTScreenWidth-12-liuYanCountLab.width;
@@ -142,7 +142,7 @@
     liuYanIcon.top = netImg1.bottom+9;
     liuYanIcon.left = liuYanCountLab.left-5-10;
     //浏览数
-    liulanCountLab.text = @"1212";
+    liulanCountLab.text = [WTUtil strRelay:self.item.userInfo[@"praiseNumber"]];
     liulanCountLab.top = netImg1.bottom+9;
     [liulanCountLab sizeToFit];
     liulanCountLab.left = liuYanIcon.left-16-liulanCountLab.width;

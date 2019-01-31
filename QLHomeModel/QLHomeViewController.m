@@ -22,7 +22,7 @@
 @property (nonatomic,copy) NSArray *categoryArray;
 @property (nonatomic,copy) NSArray *ageArray;
 @property (nonatomic,copy) NSArray *businessArray;
-@property (nonatomic,strong) NSMutableArray *articleArray;
+@property (nonatomic,strong) NSMutableArray *subjectArray;
 @property (nonatomic,strong) NSMutableArray *bannerArray;
 @end
 
@@ -35,7 +35,7 @@
     self.formManager[@"QLHomeHotTagItem"] = @"QLHomeHotTagCell";
     self.formManager[@"QLHomeMerchantListItem"] = @"QLHomeMerchantListCell";
     self.formManager[@"QLHomeTieZiItem"] = @"QLHomeTieZiCell";
-    self.articleArray = [[NSMutableArray alloc] init];
+    self.subjectArray = [[NSMutableArray alloc] init];
     self.bannerArray = [[NSMutableArray alloc] init];
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-WT_TabBar_Height;
     self.navBar.leftItemList = [NSArray array];
@@ -62,11 +62,11 @@
         self.ageArray = json[@"ageData"];
         self.categoryArray = json[@"categoryData"];
         self.businessArray = json[@"businessData"];
-        id articleData = json[@"articleData"];
-        if ([articleData isKindOfClass:[NSDictionary class]]) {
-            [self.articleArray addObject:articleData];
-        } else if ([articleData isKindOfClass:[NSArray class]]) {
-            [self.articleArray addObjectsFromArray:articleData];
+        id subjectData = json[@"subjectData"];
+        if ([subjectData isKindOfClass:[NSDictionary class]]) {
+            [self.subjectArray addObject:subjectData];
+        } else if ([subjectData isKindOfClass:[NSArray class]]) {
+            [self.subjectArray addObjectsFromArray:subjectData];
         }
         
         [self.bannerArray removeAllObjects];
@@ -114,8 +114,8 @@
         [section0 addItem:itMerchant];
     }
     
-    for (int i = 0; i < self.articleArray.count; i++) {
-        NSDictionary *dic = self.articleArray[i];
+    for (int i = 0; i < self.subjectArray.count; i++) {
+        NSDictionary *dic = self.subjectArray[i];
         QLHomeTieZiItem *itTie = [[QLHomeTieZiItem alloc] init];
         itTie.userInfo = dic;
         itTie.selectionHandler = ^(QLHomeTieZiItem *item) {
