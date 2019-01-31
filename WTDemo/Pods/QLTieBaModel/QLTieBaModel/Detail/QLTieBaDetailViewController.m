@@ -70,19 +70,18 @@
     itShop.info = self.subjectInfo;
     [section0 addItem:itShop];
     [section0 addItem:[WTEmptyItem initWithHeight:15 bgColor:[UIColor whiteColor]]];
+    //描述信息
+    QLTieBaTitleItem *itContent = [[QLTieBaTitleItem alloc] init];
+    itContent.titleText = [WTUtil strRelay:self.subjectInfo[@"description"]];
+    itContent.titleFont = WTFontSys(14);
+    itContent.titleColor = QL_DescColor_Gray;
+    itContent.rightOffset = 22;
+    [section0 addItem:itContent];
 
-//    QLTieBaTitleItem *itContent = [[QLTieBaTitleItem alloc] init];
-//    itContent.titleText = @"很早开始买的一家亲子装店淘宝店，以韩风主打，感觉每件衣服都很时髦，肯定不会撞衫，最关键的是他们家的小模特特别漂亮。夏装以纱裙主打都看起来很仙，包装真的很实在，印象中以前帮我哥家侄女买的一款裙子，包装好，关键是价格一直很良心，买多几件不心疼那种。";
-//    itContent.titleFont = WTFontSys(14);
-//    itContent.titleColor = QL_DescColor_Gray;
-//    itContent.rightOffset = 22;
-//    [section0 addItem:itContent];
-//    
-//    [section0 addItem:[WTEmptyItem initWithHeight:12 bgColor:[UIColor whiteColor]]];
-//
-//    QLTieBaImageViewItem *itemImg = [[QLTieBaImageViewItem alloc] init];
-//    [section0 addItem:itemImg];
-//
+    [section0 addItem:[WTEmptyItem initWithHeight:12 bgColor:[UIColor whiteColor]]];
+    QLTieBaImageViewItem *itemImg = [[QLTieBaImageViewItem alloc] init];
+    [section0 addItem:itemImg];
+
 //    [section0 addItem:[WTEmptyItem initWithHeight:12 bgColor:[UIColor whiteColor]]];
 
 //    QLTieBaTitleItem *itContent1 = [[QLTieBaTitleItem alloc] init];

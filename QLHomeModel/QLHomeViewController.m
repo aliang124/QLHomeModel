@@ -17,6 +17,7 @@
 #import "QLHomeMerchantListCell.h"
 #import "QLHomeTieZiCell.h"
 #import "WTLoadFailEmpty.h"
+#import "QLSearchViewController.h"
 
 @interface QLHomeViewController ()
 @property (nonatomic,copy) NSArray *categoryArray;
@@ -41,6 +42,26 @@
     self.navBar.leftItemList = [NSArray array];
     self.navBar.title = @"首页";
 
+    WT(weakSelf);
+    WTCustomBarItem *itSearchBar = [[WTCustomBarItem alloc] init];
+    itSearchBar.itemStyle = 1;
+    itSearchBar.imgSize = CGSizeMake(32, 32);
+    itSearchBar.onClick = ^{
+        [weakSelf goSearchViewController];
+    };
+    itSearchBar.itemImage = [UIImage imageNamed:@"searchBar"];
+
+    WTCustomBarItem *itMsgBar = [[WTCustomBarItem alloc] init];
+    itMsgBar.itemStyle = 1;
+    itMsgBar.imgSize = CGSizeMake(32, 32);
+    itMsgBar.itemImage = [UIImage imageNamed:@"messageBar"];
+
+    self.navBar.rightItemList = [NSArray arrayWithObjects:itMsgBar,itSearchBar, nil];
+    
+    [self getHomeData];
+}
+
+- (void)aaaa {
     WTCustomBarItem *itRight = [[WTCustomBarItem alloc] init];
     itRight.itemStyle = 0;
     itRight.itemTitle = @"登录";
@@ -50,9 +71,7 @@
         UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
         [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
     };
-    self.navBar.rightItemList = [NSArray arrayWithObject:itRight];
-    
-    [self getHomeData];
+
 }
 
 - (void)getHomeData {
@@ -62,13 +81,15 @@
         self.ageArray = json[@"ageData"];
         self.categoryArray = json[@"categoryData"];
         self.businessArray = json[@"businessData"];
+        //帖子数组
+        [self.subjectArray removeAllObjects];
         id subjectData = json[@"subjectData"];
         if ([subjectData isKindOfClass:[NSDictionary class]]) {
             [self.subjectArray addObject:subjectData];
         } else if ([subjectData isKindOfClass:[NSArray class]]) {
             [self.subjectArray addObjectsFromArray:subjectData];
         }
-        
+        //顶部banner
         [self.bannerArray removeAllObjects];
         NSArray *bArray = json[@"bannerData"];
         if (bArray && bArray.count>0) {
@@ -130,4 +151,10 @@
     
     [self.formTable reloadData];
 }
+
+- (void)goSearchViewController {
+    QLSearchViewController *vc = [[QLSearchViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 @end

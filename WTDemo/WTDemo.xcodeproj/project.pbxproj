@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
 		502CB11E21F80E6A007AB4A5 /* QLHomeTieZiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CB11C21F80E69007AB4A5 /* QLHomeTieZiCell.m */; };
+		50A9F4742202DE5E000A2AFF /* QLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */; };
 		50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		502CB11C21F80E69007AB4A5 /* QLHomeTieZiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeTieZiCell.m; sourceTree = "<group>"; };
 		502CB11D21F80E6A007AB4A5 /* QLHomeTieZiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeTieZiCell.h; sourceTree = "<group>"; };
+		50A9F4722202DE5E000A2AFF /* QLSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLSearchViewController.h; sourceTree = "<group>"; };
+		50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLSearchViewController.m; sourceTree = "<group>"; };
 		50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeHotTagCell.m; sourceTree = "<group>"; };
 		50CE09B521F4641D006E7670 /* QLHomeHotTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeHotTagCell.h; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +99,8 @@
 			children = (
 				50DADCFF2192870800DA8BFE /* QLHomeViewController.h */,
 				50DADD002192870800DA8BFE /* QLHomeViewController.m */,
+				50A9F4722202DE5E000A2AFF /* QLSearchViewController.h */,
+				50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */,
 				50EE219221EA150E00E1D9D1 /* NetWorking */,
 				50DADD1C219437AD00DA8BFE /* Cell */,
 			);
@@ -284,6 +289,7 @@
 				50DADD1F2194382B00DA8BFE /* QLHomeBannerCell.m in Sources */,
 				50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */,
 				50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */,
+				50A9F4742202DE5E000A2AFF /* QLSearchViewController.m in Sources */,
 				50EE219521EA152800E1D9D1 /* QLHomeNetWorkingUtil.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219821EA1A8200E1D9D1 /* QLHomeCategoryCell.m in Sources */,

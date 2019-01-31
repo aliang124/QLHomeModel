@@ -243,10 +243,10 @@ CHECKOUT OPTIONS:
     :commit: 0ea19ad18522064b0922b1ac9d93a805a6ccc6ff
     :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
-    :commit: 03ad89cea1f6e22fed91d3a79780c30335fb1532
+    :commit: 4d4eba63822e763a8d1d8a3c14617b51c1d85c31
     :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
-    :commit: 5e10d00566080cb22b4acaef7c5bb0dea5a72bd9
+    :commit: e3e88dc02154d1c84c12ac5fe02117479e1a09ae
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTCyclePagerView:
     :commit: 5806905a2b767426934cd0a72b2acb121d860fa3
