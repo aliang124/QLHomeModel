@@ -39,8 +39,13 @@
     itMsgBar.imgSize = CGSizeMake(32, 32);
     itMsgBar.itemImage = [UIImage imageNamed:@"messageBar"];
     itMsgBar.onClick = ^{
+        if (![[QLLoginInfo sharedInstance] isLogin]) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
+            [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+            return;
+        }
         UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMineModel" action:@"messageVC" params:nil shouldCacheTarget:NO];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        [self.navigationController pushViewController:vc animated:YES];
     };
     self.navBar.rightItemList = [NSArray arrayWithObjects:itMsgBar,itSearchBar, nil];
     
@@ -71,19 +76,6 @@
         _ageLabel.textAlignment = NSTextAlignmentCenter;
         [self.ageView addSubview:_ageLabel];
     }
-}
-
-- (void)aaaa {
-    WTCustomBarItem *itRight = [[WTCustomBarItem alloc] init];
-    itRight.itemStyle = 0;
-    itRight.itemTitle = @"登录";
-    itRight.itemTextColor = QL_NavBar_TitleColor_Black;
-    itRight.itemTextFont = [UIFont systemFontOfSize:16];
-    itRight.onClick = ^{
-        UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
-        [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
-    };
-
 }
 
 - (void)getHomeData {

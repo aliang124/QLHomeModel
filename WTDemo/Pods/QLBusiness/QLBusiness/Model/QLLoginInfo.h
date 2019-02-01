@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSString *image;//用户头像
 
 + (QLLoginInfo *)sharedInstance;
-
++ (NSString *)getUserInfoFilePath;
 //设置登录信息
 - (void)setLoginInfoWithDict:(NSDictionary *)dInfo;
 //写入本地登录文件路径

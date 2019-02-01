@@ -23,4 +23,8 @@ Pod::Spec.new do |s|
   ss.source_files = 'QLHomeModel/NetWorking/**/*.{h,m,c,mm}'
   end
 
+  s.subspec 'View' do |ss|
+  ss.source_files = 'QLHomeModel/View/**/*.{h,m,c,mm}'
+  end
+
 end
