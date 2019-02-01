@@ -38,7 +38,10 @@
     itMsgBar.itemStyle = 1;
     itMsgBar.imgSize = CGSizeMake(32, 32);
     itMsgBar.itemImage = [UIImage imageNamed:@"messageBar"];
-
+    itMsgBar.onClick = ^{
+        UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMineModel" action:@"messageVC" params:nil shouldCacheTarget:NO];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     self.navBar.rightItemList = [NSArray arrayWithObjects:itMsgBar,itSearchBar, nil];
     
     [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
@@ -179,6 +182,7 @@
 }
 
 - (void)ybPopupMenu:(YBPopupMenu *)ybPopupMenu didSelectedAtIndex:(NSInteger)index {
-    
+    NSDictionary *dic = self.ageArray[index];
+    self.ageLabel.text = [WTUtil strRelay:dic[@"name"]];
 }
 @end
