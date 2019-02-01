@@ -8,9 +8,17 @@
 
 #import "Target_QLMineModel.h"
 #import "QLMessageViewController.h"
+#import "QLGuanZhuViewController.h"
+
 @implementation Target_QLMineModel
 - (UIViewController *)Action_messageVC:(NSDictionary*)param {
     QLMessageViewController *msg = [[QLMessageViewController alloc] init];
     return msg;
 }
+
+- (UIViewController *)Action_guanzhuVC:(NSDictionary*)param {
+    QLGuanZhuViewController *vc = [[QLGuanZhuViewController alloc] init];
+    return vc;
+}
+
 @end

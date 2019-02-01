@@ -11,6 +11,8 @@
 #import "QLSettingGroupCell.h"
 #import "QLSettingGroupCell1.h"
 #import "QLModifyPasswordViewController.h"
+#import <CTMediator.h>
+
 @interface QLSettingViewController ()
 
 @end
@@ -40,7 +42,7 @@
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:@"手机号" forKey:@"leftTitle"];
-    [dic setObject:@"13478968900" forKey:@"rightTitle"];
+    [dic setObject:[WTUtil strRelay:[QLLoginInfo sharedInstance].phone] forKey:@"rightTitle"];
     [dic setObject:@"1" forKey:@"ButtonType"];
 
     NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
@@ -106,9 +108,20 @@
 
     [section0 addItem:[WTEmptyItem initWithHeight:16]];
     
-    QLSettingButtonItem *itBtn = [[QLSettingButtonItem alloc] init];
-    itBtn.titleText = @"退出登录";
-    [section0 addItem:itBtn];
+    if ([QLLoginInfo sharedInstance].isLogin) {
+        QLSettingButtonItem *itBtn = [[QLSettingButtonItem alloc] init];
+        itBtn.titleText = @"退出登录";
+        itBtn.btnPressed = ^(void) {
+            [QLLoginInfo sharedInstance].userId = nil;
+            [QLLoginInfo sharedInstance].token = nil;
+            NSString *fileName = [QLLoginInfo getUserInfoFilePath];
+            if ([WTFile fileExistAtPath:fileName]) {
+                [WTFile fileDel:fileName];
+            }
+           [[CTMediator sharedInstance] performTarget:@"QLHomeModel" action:@"initRoot" params:nil shouldCacheTarget:NO];
+        };
+        [section0 addItem:itBtn];
+    }
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

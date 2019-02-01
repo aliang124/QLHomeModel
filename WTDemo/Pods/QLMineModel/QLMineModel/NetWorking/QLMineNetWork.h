@@ -28,4 +28,8 @@
  ** info:
  */
 + (void)guanZhuUser:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
+/*  关注列表
+ ** info:
+ */
++ (void)getFlowerIndex:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
 @end

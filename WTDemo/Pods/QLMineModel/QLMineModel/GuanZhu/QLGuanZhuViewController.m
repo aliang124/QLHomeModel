@@ -7,6 +7,9 @@
 //
 
 #import "QLGuanZhuViewController.h"
+#import "QLGuanZhuMerchantViewController.h"
+#import "QLGuanZhuTieZiViewController.h"
+#import "QLGuanZhuUserViewController.h"
 
 @interface QLGuanZhuViewController ()<WTTabPagerControllerDataSource,WTTabPagerControllerDelegate>
 @property (nonatomic, strong) NSArray *datas;
@@ -30,7 +33,7 @@
     self.tabBar.backgroundColor = [UIColor whiteColor];
     self.tabBar.progressView.backgroundColor = QL_NavBar_BgColor_Yellow;
     self.tabBarHeight = 44;
-    self.tabBar.layout.cellWidth = CGRectGetWidth(self.view.frame)/4;
+    self.tabBar.layout.cellWidth = CGRectGetWidth(self.view.frame)/3;
     self.tabBar.layout.normalTextFont = [UIFont systemFontOfSize:14];
     self.tabBar.layout.selectedTextFont = [UIFont boldSystemFontOfSize:16];
     self.tabBar.layout.selectedTextColor = QL_NavBar_TitleColor_Black;
@@ -51,10 +54,13 @@
 
 - (UIViewController *)tabPagerController:(WTTabPagerController *)tabPagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
     if (index==0) {
+        return [[QLGuanZhuMerchantViewController alloc] init];
     }
     if (index==1) {
+        return [[QLGuanZhuTieZiViewController alloc] init];
     }
     if (index==2) {
+        return [[QLGuanZhuUserViewController alloc] init];
     }
     UIViewController *VC = [[UIViewController alloc]init];
     return VC;

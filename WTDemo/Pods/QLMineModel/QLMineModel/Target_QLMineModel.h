@@ -10,4 +10,5 @@
 
 @interface Target_QLMineModel : NSObject
 - (UIViewController *)Action_messageVC:(NSDictionary*)param;
+- (UIViewController *)Action_guanzhuVC:(NSDictionary*)param;
 @end

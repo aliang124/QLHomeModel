@@ -39,6 +39,7 @@
     btn.layer.cornerRadius = 4;
     btn.layer.masksToBounds = YES;
     [btn setTitleColor:QL_UserName_TitleColor_Black forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnPress) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:btn];
 }
 
@@ -51,9 +52,9 @@
     [btn setTitle:[WTUtil strRelay:self.item.titleText] forState:UIControlStateNormal];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
+- (void)btnPress {
+    if (self.item.btnPressed) {
+        self.item.btnPressed();
+    }
 }
-
 @end

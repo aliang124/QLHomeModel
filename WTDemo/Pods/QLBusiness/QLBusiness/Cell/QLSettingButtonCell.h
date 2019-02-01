@@ -9,6 +9,7 @@
 
 @interface QLSettingButtonItem : WTBaseItem
 @property (nonatomic,copy) NSString *titleText;
+@property (nonatomic,copy) void (^btnPressed)(void);
 @end
 
 @interface QLSettingButtonCell : WTBaseCell

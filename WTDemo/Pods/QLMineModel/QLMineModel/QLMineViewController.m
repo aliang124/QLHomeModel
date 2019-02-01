@@ -104,6 +104,9 @@
 
 - (void)updateInfo {
     userNameLab.text = [WTUtil strRelay:self.accountCenterInfo[@"nickName"]];
+    if (![[QLLoginInfo sharedInstance] isLogin]) {
+        userNameLab.text = @"尚未登录";
+    }
     [iconImg setWebImageWithUrl:[WTUtil strRelay:self.accountCenterInfo[@"image"]] placeHolder:nil];
 }
 
@@ -145,6 +148,11 @@
     it1.iconImg = [UIImage imageNamed:@"baby"];
     it1.textString = @"宝宝档案";
     it1.selectionHandler = ^(id item) {
+        if (![[QLLoginInfo sharedInstance] isLogin]) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
+            [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+            return;
+        }
         QLBabyRecordViewController *baby = [[QLBabyRecordViewController alloc] init];
         [bself.navigationController pushViewController:baby animated:YES];
     };
@@ -163,6 +171,11 @@
     it3.iconImg = [UIImage imageNamed:@"help"];
     it3.textString = @"帮助反馈";
     it3.selectionHandler = ^(id item) {
+        if (![[QLLoginInfo sharedInstance] isLogin]) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
+            [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+            return;
+        }
         QLFeedBackViewController *aa = [[QLFeedBackViewController alloc] initWithUrlString:@"http://www.baidu.com"];
         [bself.navigationController pushViewController:aa animated:YES];
     };
@@ -184,6 +197,11 @@
 }
 
 - (void)btnPress:(UIButton *)btn {
+    if (![[QLLoginInfo sharedInstance] isLogin]) {
+        UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
+        [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+        return;
+    }
     if (btn.tag == 0) {
         QLGuanZhuViewController *guan = [[QLGuanZhuViewController alloc] init];
         [self.navigationController pushViewController:guan animated:YES];
@@ -197,6 +215,11 @@
 }
 
 - (void)editUserInfo {
+    if (![[QLLoginInfo sharedInstance] isLogin]) {
+        UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLLoginModel" action:@"loginVC" params:nil shouldCacheTarget:NO];
+        [self.navigationController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+        return;
+    }
     QLUserInfoViewController *info = [[QLUserInfoViewController alloc] init];
     [self.navigationController pushViewController:info animated:YES];
 }

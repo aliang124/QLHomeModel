@@ -15,6 +15,8 @@
 #define QL_NetWorking_Follow_Fans @"/follow/fans"
 //粉丝里关注用户
 #define QL_NetWorking_Follow_Follow @"/follow/follow"
+//关注列表
+#define QL_NetWorking_Follow_Index @"/follow/index"
 
 #import "QLMineNetWork.h"
 #import "WTBaseCore.h"
@@ -80,4 +82,17 @@
         }
     }];
 }
+
++ (void)getFlowerIndex:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_Follow_Index Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
+
 @end

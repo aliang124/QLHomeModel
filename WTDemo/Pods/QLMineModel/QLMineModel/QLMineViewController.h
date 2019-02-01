@@ -7,6 +7,7 @@
 //
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import <CTMediator.h>
 @interface QLMineViewController : QLFormViewController
 
 @end
