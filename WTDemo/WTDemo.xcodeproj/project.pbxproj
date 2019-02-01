@@ -10,6 +10,9 @@
 		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
 		502CB11E21F80E6A007AB4A5 /* QLHomeTieZiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CB11C21F80E69007AB4A5 /* QLHomeTieZiCell.m */; };
 		50A9F4742202DE5E000A2AFF /* QLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */; };
+		50A9F47E2204955F000A2AFF /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F4782204955E000A2AFF /* YBPopupMenu.m */; };
+		50A9F47F2204955F000A2AFF /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F47A2204955E000A2AFF /* YBPopupMenuPath.m */; };
+		50A9F4802204955F000A2AFF /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F47D2204955F000A2AFF /* YBRectConst.m */; };
 		50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
@@ -26,6 +29,12 @@
 		502CB11D21F80E6A007AB4A5 /* QLHomeTieZiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeTieZiCell.h; sourceTree = "<group>"; };
 		50A9F4722202DE5E000A2AFF /* QLSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLSearchViewController.h; sourceTree = "<group>"; };
 		50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLSearchViewController.m; sourceTree = "<group>"; };
+		50A9F4782204955E000A2AFF /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
+		50A9F4792204955E000A2AFF /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+		50A9F47A2204955E000A2AFF /* YBPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenuPath.m; sourceTree = "<group>"; };
+		50A9F47B2204955F000A2AFF /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
+		50A9F47C2204955F000A2AFF /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
+		50A9F47D2204955F000A2AFF /* YBRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRectConst.m; sourceTree = "<group>"; };
 		50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeHotTagCell.m; sourceTree = "<group>"; };
 		50CE09B521F4641D006E7670 /* QLHomeHotTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeHotTagCell.h; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +70,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50A9F47722049541000A2AFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50A9F47B2204955F000A2AFF /* YBPopupMenu.h */,
+				50A9F4782204955E000A2AFF /* YBPopupMenu.m */,
+				50A9F4792204955E000A2AFF /* YBPopupMenuPath.h */,
+				50A9F47A2204955E000A2AFF /* YBPopupMenuPath.m */,
+				50A9F47C2204955F000A2AFF /* YBRectConst.h */,
+				50A9F47D2204955F000A2AFF /* YBRectConst.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		50DADCD32192811A00DA8BFE = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +123,7 @@
 				50DADD002192870800DA8BFE /* QLHomeViewController.m */,
 				50A9F4722202DE5E000A2AFF /* QLSearchViewController.h */,
 				50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */,
+				50A9F47722049541000A2AFF /* View */,
 				50EE219221EA150E00E1D9D1 /* NetWorking */,
 				50DADD1C219437AD00DA8BFE /* Cell */,
 			);
@@ -285,12 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A9F47F2204955F000A2AFF /* YBPopupMenuPath.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
 				50DADD1F2194382B00DA8BFE /* QLHomeBannerCell.m in Sources */,
 				50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */,
 				50DADD012192870800DA8BFE /* QLHomeViewController.m in Sources */,
+				50A9F47E2204955F000A2AFF /* YBPopupMenu.m in Sources */,
 				50A9F4742202DE5E000A2AFF /* QLSearchViewController.m in Sources */,
 				50EE219521EA152800E1D9D1 /* QLHomeNetWorkingUtil.m in Sources */,
+				50A9F4802204955F000A2AFF /* YBRectConst.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219821EA1A8200E1D9D1 /* QLHomeCategoryCell.m in Sources */,
 				502CB11E21F80E6A007AB4A5 /* QLHomeTieZiCell.m in Sources */,
