@@ -13,6 +13,7 @@
 		50A9F47E2204955F000A2AFF /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F4782204955E000A2AFF /* YBPopupMenu.m */; };
 		50A9F47F2204955F000A2AFF /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F47A2204955E000A2AFF /* YBPopupMenuPath.m */; };
 		50A9F4802204955F000A2AFF /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F47D2204955F000A2AFF /* YBRectConst.m */; };
+		50A9F48F2204B256000A2AFF /* Target_QLHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F48D2204B255000A2AFF /* Target_QLHomeModel.m */; };
 		50CE09B621F4641D006E7670 /* QLHomeHotTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
@@ -35,6 +36,8 @@
 		50A9F47B2204955F000A2AFF /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
 		50A9F47C2204955F000A2AFF /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
 		50A9F47D2204955F000A2AFF /* YBRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRectConst.m; sourceTree = "<group>"; };
+		50A9F48D2204B255000A2AFF /* Target_QLHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_QLHomeModel.m; sourceTree = "<group>"; };
+		50A9F48E2204B255000A2AFF /* Target_QLHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_QLHomeModel.h; sourceTree = "<group>"; };
 		50CE09B421F4641D006E7670 /* QLHomeHotTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLHomeHotTagCell.m; sourceTree = "<group>"; };
 		50CE09B521F4641D006E7670 /* QLHomeHotTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLHomeHotTagCell.h; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +122,8 @@
 		50DADCFE2192870800DA8BFE /* QLHomeModel */ = {
 			isa = PBXGroup;
 			children = (
+				50A9F48E2204B255000A2AFF /* Target_QLHomeModel.h */,
+				50A9F48D2204B255000A2AFF /* Target_QLHomeModel.m */,
 				50DADCFF2192870800DA8BFE /* QLHomeViewController.h */,
 				50DADD002192870800DA8BFE /* QLHomeViewController.m */,
 				50A9F4722202DE5E000A2AFF /* QLSearchViewController.h */,
@@ -320,6 +325,7 @@
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219821EA1A8200E1D9D1 /* QLHomeCategoryCell.m in Sources */,
 				502CB11E21F80E6A007AB4A5 /* QLHomeTieZiCell.m in Sources */,
+				50A9F48F2204B256000A2AFF /* Target_QLHomeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

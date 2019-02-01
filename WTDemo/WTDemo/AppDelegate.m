@@ -24,6 +24,7 @@
     [[QLLoginInfo sharedInstance] readLoginInfoFromFile];
 
     [self initRoot];
+    [[CTMediator sharedInstance] performTarget:@"QLHomeModel" action:@"initRoot" params:nil shouldCacheTarget:NO];
     
     return YES;
 }
