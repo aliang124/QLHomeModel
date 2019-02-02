@@ -7,7 +7,7 @@
 //
 
 #import "QLSearchTieZiViewController.h"
-#import "QLGuanZhuMerchantCell.h"
+#import "QLSearchMerchantCell.h"
 #import "QLMineNetWork.h"
 #import "WTLoadFailEmpty.h"
 #import <MJRefresh.h>
@@ -27,7 +27,7 @@
     
     _isFromRefresh = YES;
     _listArray = [[NSMutableArray alloc] init];
-    self.formManager[@"QLGuanZhuMerchantItem"] = @"QLGuanZhuMerchantCell";
+    self.formManager[@"QLSearchMerchantItem"] = @"QLSearchMerchantCell";
     
     self.formTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         self.pageIndex = 1;
@@ -78,7 +78,7 @@
     RETableViewSection *section0 = [RETableViewSection section];
     
     for (int i = 0; i < self.listArray.count; i++) {
-        QLGuanZhuMerchantItem *itFuns = [[QLGuanZhuMerchantItem alloc] init];
+        QLSearchMerchantItem *itFuns = [[QLSearchMerchantItem alloc] init];
         itFuns.info = self.listArray[i];
         [section0 addItem:itFuns];
     }

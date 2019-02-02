@@ -16,6 +16,7 @@
 		505DB73F2205D3E80088F9C5 /* QLSearchMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB73A2205D3E70088F9C5 /* QLSearchMerchantViewController.m */; };
 		505DB7402205D3E80088F9C5 /* QLSearchTieZiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB73B2205D3E70088F9C5 /* QLSearchTieZiViewController.m */; };
 		505DB7412205D3E80088F9C5 /* QLSearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB73E2205D3E80088F9C5 /* QLSearchUserViewController.m */; };
+		505DB7442205D56B0088F9C5 /* QLSearchMerchantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7422205D56B0088F9C5 /* QLSearchMerchantCell.m */; };
 		50A9F4742202DE5E000A2AFF /* QLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */; };
 		50A9F47E2204955F000A2AFF /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F4782204955E000A2AFF /* YBPopupMenu.m */; };
 		50A9F47F2204955F000A2AFF /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9F47A2204955E000A2AFF /* YBPopupMenuPath.m */; };
@@ -49,6 +50,8 @@
 		505DB73C2205D3E70088F9C5 /* QLSearchUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLSearchUserViewController.h; sourceTree = "<group>"; };
 		505DB73D2205D3E80088F9C5 /* QLSearchMerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLSearchMerchantViewController.h; sourceTree = "<group>"; };
 		505DB73E2205D3E80088F9C5 /* QLSearchUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLSearchUserViewController.m; sourceTree = "<group>"; };
+		505DB7422205D56B0088F9C5 /* QLSearchMerchantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLSearchMerchantCell.m; sourceTree = "<group>"; };
+		505DB7432205D56B0088F9C5 /* QLSearchMerchantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLSearchMerchantCell.h; sourceTree = "<group>"; };
 		50A9F4722202DE5E000A2AFF /* QLSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLSearchViewController.h; sourceTree = "<group>"; };
 		50A9F4732202DE5E000A2AFF /* QLSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLSearchViewController.m; sourceTree = "<group>"; };
 		50A9F4782204955E000A2AFF /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		50DADD1C219437AD00DA8BFE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				505DB7432205D56B0088F9C5 /* QLSearchMerchantCell.h */,
+				505DB7422205D56B0088F9C5 /* QLSearchMerchantCell.m */,
 				505DB7372205CE9A0088F9C5 /* QLSearchCell.h */,
 				505DB7362205CE9A0088F9C5 /* QLSearchCell.m */,
 				505DB7342205C65C0088F9C5 /* QLSearchBarCell.h */,
@@ -349,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				505DB73F2205D3E80088F9C5 /* QLSearchMerchantViewController.m in Sources */,
+				505DB7442205D56B0088F9C5 /* QLSearchMerchantCell.m in Sources */,
 				50A9F47F2204955F000A2AFF /* YBPopupMenuPath.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
 				505DB7382205CE9B0088F9C5 /* QLSearchCell.m in Sources */,
