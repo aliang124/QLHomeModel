@@ -9,6 +9,7 @@
 #import "QLSearchView.h"
 #import "QLSearchHotCell.h"
 #import "QLSearchBarCell.h"
+#import "QLSearchCell.h"
 @implementation QLSearchView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -40,6 +41,7 @@
     _formManager[@"WTBaseItem"] = @"WTBaseCell";
     _formManager[@"QLSearchHotItem"] = @"QLSearchHotCell";
     _formManager[@"QLSearchBarItem"] = @"QLSearchBarCell";
+    _formManager[@"QLSearchItem"] = @"QLSearchCell";
 }
 
 #pragma mark - RETableViewManagerDelegate
@@ -59,6 +61,12 @@
     
     QLSearchBarItem *itBar = [[QLSearchBarItem alloc] init];
     [section0 addItem:itBar];
+    
+    for (int i = 0; i < 5; i++) {
+        QLSearchItem *itSearch = [[QLSearchItem alloc] init];
+        itSearch.titleText = @"合肥中考";
+        [section0 addItem:itSearch];
+    }
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
