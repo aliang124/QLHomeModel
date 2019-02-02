@@ -50,7 +50,6 @@
 }
 
 - (void)initForm {
-    WT(weakSelf);
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
 
@@ -65,6 +64,11 @@
     for (int i = 0; i < 5; i++) {
         QLSearchItem *itSearch = [[QLSearchItem alloc] init];
         itSearch.titleText = @"合肥中考";
+        itSearch.selectionHandler = ^(QLSearchItem *item) {
+            if (self.selectionHandler) {
+                self.selectionHandler(item.titleText);
+            }
+        };
         [section0 addItem:itSearch];
     }
     

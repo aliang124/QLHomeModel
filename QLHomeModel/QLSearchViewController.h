@@ -8,6 +8,8 @@
 
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
-@interface QLSearchViewController : QLViewController
+#import "WTTabPagerController.h"
+
+@interface QLSearchViewController : WTTabPagerController
 
 @end

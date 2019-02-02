@@ -13,4 +13,7 @@
 @interface QLSearchView : UIView <RETableViewManagerDelegate>
 @property (nonatomic, strong) UITableView *formTable;
 @property (nonatomic, strong) RETableViewManager *formManager;
+
+@property (copy, readwrite, nonatomic) void (^selectionHandler)(NSString *keyText);
+
 @end
