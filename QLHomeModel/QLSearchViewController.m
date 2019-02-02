@@ -49,6 +49,8 @@
     self.datas = [NSArray arrayWithObjects:@"商家",@"帖子",@"用户", nil];
     [self setTabBarView];
     [self reloadData];
+    
+    [_searchTextField becomeFirstResponder];
 }
 
 - (void)setTabBarView {
