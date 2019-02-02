@@ -6,12 +6,8 @@
 //  Copyright © 2019年 计恩良. All rights reserved.
 //
 
-#import "QLViewController.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
 @interface QLSearchViewController : QLViewController
 
 @end
-
-NS_ASSUME_NONNULL_END

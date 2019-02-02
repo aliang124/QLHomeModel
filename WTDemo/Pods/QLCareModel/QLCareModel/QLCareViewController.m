@@ -9,6 +9,7 @@
 #import "QLCareViewController.h"
 #import "QLBusiness.h"
 #import "QLCareListCell.h"
+#import <CTMediator.h>
 @interface QLCareViewController ()
 @end
 
@@ -21,6 +22,7 @@
     
     _barView = [[QLCareBarView alloc] initWithFrame:CGRectMake(0, WT_NavBar_Height, WTScreenWidth, 44)];
     _barView.backgroundColor = [UIColor whiteColor];
+    [_barView addTarget:self action:@selector(btnPress) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_barView];
     
     self.formTable.top = _barView.bottom;
@@ -50,4 +52,8 @@
     [self.formTable reloadData];
 }
 
+- (void)btnPress {
+    UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLMineModel" action:@"guanzhuVC" params:nil shouldCacheTarget:NO];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

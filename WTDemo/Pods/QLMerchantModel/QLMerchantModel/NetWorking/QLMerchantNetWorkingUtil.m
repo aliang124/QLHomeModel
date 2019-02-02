@@ -17,6 +17,8 @@
 #define QL_NetWorking_PingJiaDetail @"/business/comments-detail"
 //用户主页
 #define QL_NetWorking_ZhuYe @"/member/index"
+//评价
+#define QL_NetWorking_Confirm_Comments @"/comments/confirm-comments"
 
 #import "QLMerchantNetWorkingUtil.h"
 #import "WTBaseCore.h"
@@ -97,4 +99,15 @@
     }];
 }
 
++ (void)confirmComments:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_Confirm_Comments Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
 @end

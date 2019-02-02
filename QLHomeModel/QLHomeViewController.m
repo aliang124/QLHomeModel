@@ -7,7 +7,7 @@
 //
 
 #import "QLHomeViewController.h"
-
+#define QLColorHexA(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 @interface QLHomeViewController ()
 @end
 
@@ -58,18 +58,18 @@
 
 - (void)createAgeView {
     if (_ageView==nil) {
-        _ageView = [[UIButton alloc] initWithFrame:CGRectMake(12,((WT_NavBar_Title_Height-36)/2)+WT_Height_StatusBar, 100, 36)];
+        _ageView = [[UIButton alloc] initWithFrame:CGRectMake(12,((WT_NavBar_Title_Height-32)/2)+WT_Height_StatusBar, 100, 32)];
         _ageView.layer.cornerRadius = 18;
         _ageView.layer.masksToBounds = YES;
-        _ageView.backgroundColor = WTColorHex(0x947d00);
+        _ageView.backgroundColor = QLColorHexA(0x947d00,0.2);
         [_ageView addTarget:self action:@selector(ageBtnPress) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_ageView];
         
-        UIImageView *arrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(73, 11, 16, 16)];
+        UIImageView *arrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(73, 8, 16, 16)];
         [arrowImg setImage:[UIImage imageNamed:@"home_downArrow"]];
         [self.ageView addSubview:arrowImg];
         
-        _ageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 73, 16)];
+        _ageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 8, 73, 16)];
         _ageLabel.font = WTFontSys(18);
         _ageLabel.textColor = WTColorHex(0x171714);
         _ageLabel.text = @"3~6岁";

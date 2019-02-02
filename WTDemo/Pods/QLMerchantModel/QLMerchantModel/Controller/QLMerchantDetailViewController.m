@@ -10,7 +10,7 @@
 #import "QLZhuYeViewController.h"
 #import "QLPingJiaListViewController.h"
 #import <MJRefresh.h>
-
+#import "QLPingJiaDetailViewController.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;//商家信息
 @property (nonatomic,copy) NSArray *businessCommentsData;//评论
@@ -46,8 +46,12 @@
 }
 
 - (void)createBottomView {
+    WT(weakSelf);
     _bottomView = [[QLBottomView alloc] initWithFrame:CGRectMake(0, WTScreenHeight-54-WT_SafeArea_BOTTOM, WTScreenWidth, 54+WT_SafeArea_BOTTOM)];
     _bottomView.businessId = self.businessId;
+    _bottomView.pingjiaCompletionHandler = ^{
+        [weakSelf.formTable.mj_header beginRefreshing];
+    };
     _bottomView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_bottomView];
 }
@@ -131,8 +135,14 @@
         for (int i = 0; i < self.businessCommentsData.count; i++) {
             NSDictionary *dic = self.businessCommentsData[i];
             QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
-            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
+//            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
             itPingJia.info = dic;
+            itPingJia.selectionHandler = ^(QLPingJiaItem *item) {
+                QLPingJiaDetailViewController *pDetail = [[QLPingJiaDetailViewController alloc] init];
+                pDetail.businessId = bself.businessId;
+                pDetail.commentId = item.info[@"id"];
+                [bself.navigationController pushViewController:pDetail animated:YES];
+            };
             [section0 addItem:itPingJia];
         }
         QLMoreButtonItem *itMore = [[QLMoreButtonItem alloc] init];

@@ -9,7 +9,12 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 #import "WTLoadFailEmpty.h"
+typedef void(^pingjiaCompletionHandler)(void);
 
 @interface QLPingJiaViewController : QLFormViewController
 @property (nonatomic,copy) NSString *businessId;
+@property (nonatomic,copy) id info;
+//登录完成回调
+@property (nonatomic, copy) pingjiaCompletionHandler pingjiaCompletionHandler;
+
 @end

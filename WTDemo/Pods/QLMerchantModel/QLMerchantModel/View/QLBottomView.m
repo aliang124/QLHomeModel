@@ -55,12 +55,19 @@
 
 - (void)goToZhuYe {
     QLZhuYeViewController *zhu = [[QLZhuYeViewController alloc] init];
-    zhu.memberId = self.businessId;//self.info[@"id"];
+    zhu.memberId = self.info[@"id"];
     WTRootNavPush(zhu);
 }
 
 - (void)goToPingJia {
     QLPingJiaViewController *zhu = [[QLPingJiaViewController alloc] init];
+    zhu.businessId = self.businessId;
+    zhu.info = self.info;
+    zhu.pingjiaCompletionHandler = ^{
+        if (self.pingjiaCompletionHandler) {
+            self.pingjiaCompletionHandler();
+        }
+    };
     WTRootNavPush(zhu);
 }
 @end

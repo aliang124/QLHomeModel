@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+typedef void(^pingjiaCompletionHandler)(void);
 
 @interface QLBottomView : UIView
 @property (nonatomic,copy) id info;
 @property (nonatomic,copy) NSString *businessId;
+//评价完成回调
+@property (nonatomic, copy) pingjiaCompletionHandler pingjiaCompletionHandler;
 @end
